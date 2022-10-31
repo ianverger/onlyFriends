@@ -1,0 +1,40 @@
+#friend-requests-dropdown {
+    top: 52px;
+    right: 12px;
+    background-color: white;
+    border: solid rgb(220, 218, 218) .05px;
+   
+    /* display: none; */
+    position: absolute;
+    width: 250px;
+    overflow: auto;
+    padding: 10px 10px 10px 10px;
+    box-shadow: 1px 4px 4px 0px rgba(135, 135, 135, 0.4);
+    border-radius: 10px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+#inc-fr-num {
+    position: absolute;
+    right: 65px;
+    background-color: red;
+    height: 22px;
+    width: 22px;
+    border-radius: 50%;
+    padding: none;
+    margin: none;
+    z-index: 6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: smaller;
+}
+
+#no-inc-reqs {
+    display: none;
+}
+

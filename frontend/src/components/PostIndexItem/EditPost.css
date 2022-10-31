@@ -1,0 +1,20 @@
+.update-buttons {
+    /* display: flex; */
+    flex-direction: column;
+}
+
+#delete-post, .ellipses {
+    width: 50px;
+    height: 18px;
+    font-size: 10px;
+    font-weight: 600;
+    border-radius: 5px;
+    border: none;
+    background-color: #efefef;
+    color:black;
+}
+
+#delete-post:hover, .ellipses:hover {
+    background-color: #eaeaea;
+    cursor: pointer;
+}

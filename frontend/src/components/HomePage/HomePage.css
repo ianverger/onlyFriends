@@ -1,0 +1,46 @@
+#home-page {
+    margin-top: 25px;
+    padding-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px
+}
+
+#new-post {
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 600px;
+    box-shadow: 0 1px 1px 1px rgba(203, 202, 202, 0.721);
+}
+
+#new-post-button {
+    border-radius: 20px;
+    font-size: 18px;
+    font-weight: 330;
+    text-align: left;
+    color: rgb(101, 100, 100);
+    padding: 10px;
+    padding-left: 15px;
+    background-color: #f1f1f1da;
+    border: none;
+    height: 40px;
+    width: 84%;
+}
+#new-post-button:hover {
+    background-color: #eaeaea;
+    cursor: pointer
+}
+
+#selected-user-profile-pic {
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    margin-right: 10px;
+
+}
+

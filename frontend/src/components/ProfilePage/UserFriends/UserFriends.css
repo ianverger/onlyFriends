@@ -1,0 +1,8 @@
+#friend-cards {
+    padding-top: 10px;
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    padding-left: 2.5px;
+}
+

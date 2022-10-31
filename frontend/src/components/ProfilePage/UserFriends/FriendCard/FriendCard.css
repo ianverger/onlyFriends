@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+#friend-card {
+    height: 155px;
+    width: 112px;
+    text-decoration: none;
+    color: black;
+}
+
+#friend-pic {
+    height: 120px;
+    width: 108px;
+    border-radius: 8px;
+}
+
+#friend-name {
+    font-weight: bold;
+    font-size: small;
+    word-wrap: break-word;
+}

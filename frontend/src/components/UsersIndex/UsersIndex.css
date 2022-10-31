@@ -1,0 +1,28 @@
+#u-i-p {
+    /* width: 700px; */
+    margin: 25px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+   /* justify-content: left; */
+    flex-direction: column;
+}
+
+#uip-title > h2{
+    /* display: flex; */
+    /* justify-content: left; */
+    position: relative;
+    left: -215px;
+    top: 12px;
+    /* background-color: green; */
+    text-align: left;
+}
+
+#users-index {
+    margin-top: 15px;
+    display: flex;
+   width: 700px;
+   flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}

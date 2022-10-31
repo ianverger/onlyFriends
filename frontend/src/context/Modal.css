@@ -1,0 +1,29 @@
+#modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #modal-background {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(235, 235, 235, 0.91);
+  }
+  
+  #modal-content {
+    position: absolute;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    /* height: 540px; */
+    width: 420px;
+    padding: 18px 18px 20px 18px;
+    box-shadow: 0 5px 5px 3px gainsboro;
+  }

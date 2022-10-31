@@ -1,0 +1,60 @@
+#requester-card {
+    font-size: 17px;
+    display: flex;
+            /* align-items: center; */
+    /* justify-content: left; */
+    width: 100%;
+    height: 35px;
+    margin: 2px;
+    background-color: inherit;
+    border: none;
+    border-radius: 5px;
+}
+
+#dropdown-request-icon {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+#requester-card > p {
+    padding-top: 7px;
+}
+
+#buttons {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+#approve-button, #deny-button {
+    width: 100px;
+    height: 30px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 5px;
+    border: none;
+}
+
+#approve-button {
+    color: white;
+    background-color: #1877F2;
+}
+
+#approve-button:hover {
+    background-color: #166FE5;
+    cursor: pointer;
+}
+
+#deny-button {
+  background-color: #efefef;
+  color:black;
+}
+
+#deny-button:hover {
+    background-color: #eaeaea;
+    cursor: pointer;
+}

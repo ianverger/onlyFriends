@@ -1,0 +1,232 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f0f2f5;
+    position: relative;
+    height: 115vh;
+    overflow-x: hidden;
+}
+
+.container {
+    display: flex;
+}
+
+#recent-logins {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 13vw;
+    top: 20vh;
+    margin-right: 30vw;
+}
+
+#recent-logins > #title {
+    text-align: left;
+    font-size: 28px;
+    font-weight: normal;
+    line-height: 32px;
+    margin-bottom: 5px;
+}
+
+#recent-logins > #sub {
+    color: #606770;
+    font-size: 15px;
+    line-height: 15px;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+#cards {
+    display: flex;
+}
+
+#demo-card, #add-card {
+    position: relative;
+    background-color: white;
+    margin-right: 10px;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+#demo-card:hover, #add-card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: box-shadow 0.3s;
+}
+
+#demo-img, #add-account-img {
+    height: 160px; 
+    width: 160px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.username {
+    font-size: 18px;
+    line-height: 18px;
+    padding: 12px;
+    text-align: center;
+    color: rgb(75, 79, 86);
+}
+
+#logo {
+    height: 50px;
+    width: 200px;
+    color: #1877F2
+}
+
+.login {
+    position: relative;
+    background-color: #FFFFFF;
+    right: 5vw;
+    height: 350px;
+    width: 400px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    top: 18vh;
+    justify-content: flex-start;
+    padding: 10px 10px 20px 10px;
+    align-items: center;
+    box-shadow: 0 5px 5px 3px gainsboro;
+}
+
+.form {
+    margin-left: 15px;
+}
+
+.credential, .password {
+    height: 30%;
+    margin: 8px 0;
+    border-radius: 5px;
+    padding-left: 10px;
+    font-size: 16px;
+    width: 95%;
+    border: 1.5px solid #EEEFF0;
+}
+
+.login, .password {
+    margin-bottom: 15px;
+}
+
+.credential:focus, .password:focus {
+    outline: none;
+    border: 1px solid blue;
+    box-shadow: 0 0 5px #719ECE;
+    caret-color: blue
+}
+
+.login-button {
+    background-color: #1877F2;
+    color: #FFFFFF;
+    font-size: 20px;
+    border-radius: 5px;
+    border: none;
+    height: 30%;
+    font-weight: bold;
+    width: 95%;
+}
+
+.login-button:hover {
+    background-color: #166FE5;
+    cursor: pointer;
+}
+
+.form > #forgot-pw {
+    margin: 18px 0;
+    text-decoration: none;
+    font-size: 15px;
+    color: #1877F2;
+    position: inherit;
+    display: flex;
+    justify-content: center;
+}
+
+.form > #forgot-pw:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.form > #hr {
+    width: 95%;
+    background-color: rgb(194, 193, 193);
+    height: 0.1%;
+    border: none;
+}
+
+#create-div {
+    height: 70%;
+    margin-top: 25%; 
+    margin-left: -12%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#create-new-account {
+    background-color: #43a72f;
+    color: #FFFFFF;
+    font-size: 18px;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    margin-left: 20%;
+    width: 280px;
+    height: 75%;
+}
+
+#create-new-account:hover {
+    background-color: #3a9e26;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1115px) {
+    #recent-logins {
+        margin-right: 22vw;
+    }
+    .login {
+        right: 30px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #logo {
+        margin-left: 14px;
+        margin-top: -15px;
+    }
+
+    #recent-logins {
+        margin-right: 0;
+        align-items: center;
+        left: 0;
+        top: 20px;
+    }
+
+    .login {
+        text-align: center;
+        left: 0;
+        margin-left: -10px;
+        margin-right: 0;
+        margin-top: -30px;
+        top: 80px;
+    }
+
+    .form > .credential, .password, .login-button {
+        margin-left: -12px;
+    }
+
+    #create-new-account {
+        width: 235px;
+    }
+}

@@ -1,0 +1,16 @@
+#edit-post-button {
+    width: 50px;
+    height: 18px;
+    font-size: 10px;
+    font-weight: 600;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 2px;
+    color: white;
+    background-color: #1877F2;
+}
+
+#edit-post-button:hover {
+    cursor: pointer;
+    background-color: #166FE5;
+}
