@@ -55,9 +55,16 @@ const PostIndexItem = ({post, sessionUser, pkey}) => {
             </button>
         )
     }
-  
-    // if (!post.likes.length) return null;
-    // console.log(UserLiked());
+//   let comments;
+//     // if (!post.likes.length) return null;
+//     if (post.comments.length > 0) {
+//         comments = post.comments.map(post => {
+//             post.body
+//         })
+//     console.log(post.comments[0].body);
+//     }
+    const commentIndexItems = post.comments.map(post => post.body)
+
     return (
         <div id="post">
             <div id="top">
@@ -87,6 +94,7 @@ const PostIndexItem = ({post, sessionUser, pkey}) => {
                     </button>
                 </div>
                 <hr className="post-lines"/>
+                {post.comments && commentIndexItems}
             </div>
        </ div>
     )
