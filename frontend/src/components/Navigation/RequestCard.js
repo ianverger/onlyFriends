@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
-import { approveFriendRequest, denyFriendRequest } from '../../store/users';
+import { fetchUser, approveFriendRequest, denyFriendRequest } from '../../store/users';
 import * as sessionActions from '../../store/session';
 import './RequestCard.css';
 
@@ -20,6 +20,10 @@ const RequestCard = ({userId, request}) => {
         const friendRequest = { requesterId: requesterId, requesteeId: requesteeId };
         return dispatch(denyFriendRequest(friendRequest));
     }
+
+    // useEffect(() => {
+    //     dispatch(fetchUser(userId));
+    // }, [dispatch, handleApprove, handleDeny])
 
     useEffect(() => {
         dispatch(sessionActions.restoreSession());

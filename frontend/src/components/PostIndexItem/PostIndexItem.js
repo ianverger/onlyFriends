@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUser, fetchUser } from '../../store/users';
-import { createLike, deleteLike } from '../../store/posts';
+import { createLike, deleteLike, getPost, fetchPost } from '../../store/posts';
 import { FindLikeId } from '../../utils/findLikeId';
+import { UserLiked } from '../../utils/userLiked';
 import * as sessionActions from '../../store/session';
 import EditPostDropdown from './EditPost';
 import './PostIndexItem.css';
@@ -13,7 +14,7 @@ const PostIndexItem = ({post, sessionUser, pkey}) => {
     const dispatch = useDispatch();
     let userId = post.authorId;
     const selectedUser = useSelector(getUser(userId));
-    const [likes, setLikes] = useState(post.likes ? post.likes.length : 0);
+    // const [likes, setLikes] = useState(post.likes ? post.likes.length : 0);
 
     useEffect(() => {
         dispatch(fetchUser(userId));
@@ -23,39 +24,40 @@ const PostIndexItem = ({post, sessionUser, pkey}) => {
     const handleLike = e => {
         e.preventDefault();
         dispatch(createLike(post.id)); 
-        setLikes(likes + 1);
     }
     
     const handleUnlike = e => {
         e.preventDefault();
         const likeId = FindLikeId(post.likes, post.id, sessionUser.id);
         dispatch(deleteLike(post.id, likeId));
-        setLikes(likes - 1);
     }
+
+    // useEffect(() => {
+    //     dispatch(fetchPost(post.id))
+    // }, [handleLike, handleUnlike])
     
     // useEffect(() => {
     //     dispatch(sessionActions.restoreSession);
     // }, [handleLike, handleUnlike])
 
-    // let likeButton;
+    let likeButton;
     
-    // if (post.likes && (FindLikeId(post.likes, post.id, sessionUser.id))) {
-    //     likeButton = (
-    //         <button className="like-buttons" onClick={handleUnlike}> 
-    //             <i style={{fontSize: "14px", color: "white"}} class="fa-solid fa-heart"></i>
-    //         </button>
-          
-    //     )
-    // } else {
-    //     likeButton = (
-    //         <button className="like-buttons" onClick={handleLike}>
-    //             <i style={{fontSize: "22px", color: "black"}} class="fa-regular fa-heart"></i>
-    //         </button>
-    //     )
-    // }
+    if (post.likes && !UserLiked(post.likes, sessionUser.id)) {
+        likeButton = (
+            <button className="thumb-button" onClick={handleLike}>
+                <i style={{fontSize: "22px"}} className="fa-regular fa-thumbs-up"></i>
+            </button>
+        )
+    } else {
+        likeButton = (
+            <button className="thumb-button" onClick={handleUnlike}>
+                <i style={{fontSize: "22px"}} className="fa-solid fa-thumbs-up"></i>
+            </button>
+        )
+    }
   
     // if (!post.likes.length) return null;
-    // console.log(post.likes);
+    // console.log(UserLiked());
     return (
         <div id="post">
             <div id="top">
@@ -75,13 +77,11 @@ const PostIndexItem = ({post, sessionUser, pkey}) => {
                 <button className="like-emoji"> 
                     <i style={{fontSize: "14px", color: "white"}} class="fa-solid fa-heart"></i>
                 </button>
-                <p>{post.likes.length > 1 ? `${likes} likes` : `${likes} like`}</p>
+                <p>{post.likes.length > 1 ? `${post.likes.length} likes` : `${post.likes.length} like`}</p>
                 </div>}
                 <hr className="post-lines" id="top-pl"/>
                 <div className="post-buttons">
-                    <button className="thumb-button" onClick={handleLike}>
-                        <i style={{fontSize: "22px"}} className="fa-regular fa-thumbs-up"></i>
-                    </button>
+                    {likeButton}
                     <button className="comment-button">
                         <i style={{fontSize: "22px"}} className="fa-regular fa-comment"></i>
                     </button>

@@ -33,7 +33,7 @@ function Navigation() {
         <a href="https://github.com/ianverger" target="_blank" className="center-nav-icon">
           <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" style={{height: "30px"}}/>
         </a>
-        <a href="" target="_blank" className="center-nav-icon">
+        <a href="https://angel.co/u/iverger" target="_blank" className="center-nav-icon">
           <img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/angellist-512.png" alt="AngelList" style={{height: "30px"}}/>
         </a>
       </div>

@@ -8,6 +8,7 @@ class Api::LikesController < ApplicationController
             render json: { errors: ["Cannot like more than once"] }, status: :unprocessable_entity
         else
           @post.likes.create(user_id: current_user.id)
+          render 'api/posts/show'
         end
     end
 
@@ -16,6 +17,7 @@ class Api::LikesController < ApplicationController
             render json: { errors: ["Cannot unlike more than once"] }, status: :unprocessable_entity
         else
           @like.destroy
+          render 'api/posts/show'
         end
     end
 

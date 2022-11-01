@@ -99,7 +99,7 @@
 }
 
 .thumb-button:hover, .comment-button:hover {
-    background-color: rgb(237, 237, 237);
+    background-color: rgb(242, 242, 242);
     border-radius: 5px;
     cursor: pointer;
 }
