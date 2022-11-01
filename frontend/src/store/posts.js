@@ -64,9 +64,10 @@ export const createLike = (postId) => async dispatch => {
     dispatch(receivePost(postId));
 }
 
-// export const deleteLike = (postId) => async dispatch => {
-//     const res = await csrfFetch(`/api/posts/${postId}/likes/`)
-// }
+export const deleteLike = (postId, likeId) => async dispatch => {
+    const res = await csrfFetch(`/api/posts/${postId}/likes/${likeId}`, {method: "DELETE"});
+    dispatch(receivePost(postId));
+}
 
 const postsReducer = (state = {}, action) => {
     switch(action.type) {

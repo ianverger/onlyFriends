@@ -50,3 +50,56 @@
     text-decoration: underline;
     cursor: pointer;
 }
+
+.post-body {
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#likes-count {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.like-emoji {
+   border: none;
+   border-radius: 50%;
+   height: 25px;
+   width: 25px;
+   background-color: red;
+   margin-right: 8px;
+   margin-left: 20px;
+}
+
+#top-pl {
+    margin-top: 10px;
+}
+.post-lines {
+    width: 95%;
+    margin-left: 2.5%;
+    background-color: rgb(194, 193, 193);
+    height: 1px;
+    border: none;
+}
+
+.post-buttons {
+    width: 100%;
+    display: flex;
+    margin: 3px;
+    justify-content: space-around;
+}
+
+.thumb-button, .comment-button {
+    width: 40%;
+    height: 35px;
+    border: none;
+    background-color: white;
+}
+
+.thumb-button:hover, .comment-button:hover {
+    background-color: rgb(237, 237, 237);
+    border-radius: 5px;
+    cursor: pointer;
+}
