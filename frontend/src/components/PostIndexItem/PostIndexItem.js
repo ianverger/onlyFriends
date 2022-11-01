@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUser, fetchUser } from '../../store/users';
+import { createLike } from '../../store/posts';
 import './PostIndexItem.css';
 import EditPostDropdown from './EditPost';
-import EditPostFormModal from '../PostModal/EditPostFormModal';
+// import EditPostFormModal from '../PostModal/EditPostFormModal';
 
 const PostIndexItem = ({post, sessionUser, pkey}) => {
     const dispatch = useDispatch();
@@ -14,6 +15,11 @@ const PostIndexItem = ({post, sessionUser, pkey}) => {
     useEffect(() => {
         dispatch(fetchUser(userId));
     }, [userId])
+
+    const handleLike = e => {
+        e.preventDefault();
+        dispatch(createLike(post.id))
+    }
 
     return (
         <div id="post">
@@ -28,6 +34,12 @@ const PostIndexItem = ({post, sessionUser, pkey}) => {
                <EditPostDropdown post={post} sessionUser={sessionUser} pkey={pkey}/>
             </div>
             <p>{post.body}</p>
+            <div className="likes">
+                <button onClick={handleLike}>
+                    <i class="fa-regular fa-heart"></i>
+                </button>
+                <p>{post.likes && `${post.likes.length} likes`}</p>
+            </div>
        </ div>
     )
 }

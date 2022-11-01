@@ -3,11 +3,12 @@ class Api::FriendshipsController < ApplicationController
 
     def create
         @friendship = Friendship.new(friendship_params)
-        
+
         if @friendship.save
             @user1 = User.find(friendship_params[:requester_id])
             @user2 = User.find(friendship_params[:requestee_id])
             @users = [@user1, @user2]
+     
             render :update
         else
             render json: { errors: @friendship.errors.full_messages }, status: :unprocessable_entity
@@ -49,6 +50,8 @@ class Api::FriendshipsController < ApplicationController
         end
     end
 
+    private
+    
     def friendship_params
         params.require(:friendship).permit(:id, :requester_id, :requestee_id, :confirmed)
     end 

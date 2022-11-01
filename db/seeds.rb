@@ -134,29 +134,29 @@ ApplicationRecord.transaction do
       work: "Owner of SUR, TomTom, PUMP, and Villa Blanca (RIP)"
     )
 
-    andy_profile_img = File.open('app/assets/images/Andy_Cohen_profile.jpg')
-    andy.profile_pic.attach(io: andy_profile_img, filename: 'Andy_Cohen_profile.jpg')
+    # andy_profile_img = File.open('app/assets/images/Andy_Cohen_profile.jpg')
+    # andy.profile_pic.attach(io: andy_profile_img, filename: 'Andy_Cohen_profile.jpg')
 
-    dorit_profile_img = File.open('app/assets/images/rhobh-season-12-headshots-dorit-kemsley.jpg')
-    dorit.profile_pic.attach(io: dorit_profile_img, filename: 'rhobh-season-12-headshots-dorit-kemsley.jpg')
+    # dorit_profile_img = File.open('app/assets/images/rhobh-season-12-headshots-dorit-kemsley.jpg')
+    # dorit.profile_pic.attach(io: dorit_profile_img, filename: 'rhobh-season-12-headshots-dorit-kemsley.jpg')
 
-    countess_profile_img = File.open('app/assets/images/rhony-season-13-headshot-luann-delesseps.jpg')
-    countess.profile_pic.attach(io: countess_profile_img, filename: 'rhony-season-13-headshot-luann-delesseps.jpg')
+    # countess_profile_img = File.open('app/assets/images/rhony-season-13-headshot-luann-delesseps.jpg')
+    # countess.profile_pic.attach(io: countess_profile_img, filename: 'rhony-season-13-headshot-luann-delesseps.jpg')
 
-    nene_profile_img = File.open('app/assets/images/download.jpg')
-    nene.profile_pic.attach(io: nene_profile_img, filename: 'download.jpg')
+    # nene_profile_img = File.open('app/assets/images/download.jpg')
+    # nene.profile_pic.attach(io: nene_profile_img, filename: 'download.jpg')
 
-    camille_profile_img = File.open('app/assets/images/800x800_camille_grammer.jpg')
-    camille.profile_pic.attach(io: camille_profile_img, filename: '800x800_camille_grammer.jpg')
+    # camille_profile_img = File.open('app/assets/images/800x800_camille_grammer.jpg')
+    # camille.profile_pic.attach(io: camille_profile_img, filename: '800x800_camille_grammer.jpg')
 
-    rinna_profile_img = File.open('app/assets/images/rhobh-season-12-headshots-lisa-rinna.jpg')
-    rinna.profile_pic.attach(io: rinna_profile_img, filename: 'rhobh-season-12-headshots-lisa-rinna.jpg')
+    # rinna_profile_img = File.open('app/assets/images/rhobh-season-12-headshots-lisa-rinna.jpg')
+    # rinna.profile_pic.attach(io: rinna_profile_img, filename: 'rhobh-season-12-headshots-lisa-rinna.jpg')
 
-    karen_profile_img = File.open('app/assets/images/rhop-season-7-headshots-karen-huger.jpg')
-    karen.profile_pic.attach(io: karen_profile_img, filename: 'rhop-season-7-headshots-karen-huger.jpg')
+    # karen_profile_img = File.open('app/assets/images/rhop-season-7-headshots-karen-huger.jpg')
+    # karen.profile_pic.attach(io: karen_profile_img, filename: 'rhop-season-7-headshots-karen-huger.jpg')
 
-    lvp_profile_img = File.open('app/assets/images/lisa-vanderpump-addresses-vpr-cast.jpg')
-    lvp.profile_pic.attach(io: lvp_profile_img, filename: 'lisa-vanderpump-addresses-vpr-cast.jpg')
+    # lvp_profile_img = File.open('app/assets/images/lisa-vanderpump-addresses-vpr-cast.jpg')
+    # lvp.profile_pic.attach(io: lvp_profile_img, filename: 'lisa-vanderpump-addresses-vpr-cast.jpg')
 
     Post.create!(
         body: 'When you travel the world, you can speak in any accent you like',

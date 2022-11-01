@@ -32,7 +32,7 @@ function ProfilePage() {
 
     if (!sessionUser) return <Redirect to="/" />
     if (!selectedUser) return null;
-
+    
     const bioHandleClick = e => {
         setBio(selectedUser.bio)
         const bioInput = document.getElementById("bio");
@@ -56,8 +56,9 @@ function ProfilePage() {
         dispatch(updateUser(user));
         bioHandleClick();
     }
-
+    
     if (!selectedUser.friends) return null;
+    if (!friends) return null;
 
     const profilePicSrc = selectedUser.profilePicUrl ? selectedUser.profilePicUrl : require('../../assets/blank_profile_pic.png');
     const wallPosts = allPosts.filter(post => String(post.authorId) === userId);

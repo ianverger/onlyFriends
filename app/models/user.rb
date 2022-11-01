@@ -43,6 +43,9 @@ class User < ApplicationRecord
     inverse_of: :author,
     class_name: :Post
 
+  has_many :likes, 
+    dependent: :destroy
+
   has_many :sent_requests,
     foreign_key: :requester_id,
     inverse_of: :requester,
