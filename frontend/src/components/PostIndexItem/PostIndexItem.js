@@ -14,7 +14,7 @@ const PostIndexItem = ({post, sessionUser, pkey}) => {
     const dispatch = useDispatch();
     let userId = post.authorId;
     const selectedUser = useSelector(getUser(userId));
-    // const [likes, setLikes] = useState(post.likes ? post.likes.length : 0);
+    const [comment, setComment] = useState("");
 
     useEffect(() => {
         dispatch(fetchUser(userId));
@@ -32,6 +32,10 @@ const PostIndexItem = ({post, sessionUser, pkey}) => {
         dispatch(deleteLike(post.id, likeId));
     }
 
+    const submitComment = e => {
+        e.preventDefault();
+        console.log(comment)
+    }
     // useEffect(() => {
     //     dispatch(fetchPost(post.id))
     // }, [handleLike, handleUnlike])
@@ -55,14 +59,7 @@ const PostIndexItem = ({post, sessionUser, pkey}) => {
             </button>
         )
     }
-//   let comments;
-//     // if (!post.likes.length) return null;
-//     if (post.comments.length > 0) {
-//         comments = post.comments.map(post => {
-//             post.body
-//         })
-//     console.log(post.comments[0].body);
-//     }
+
     const commentIndexItems = post.comments.map(post => post.body)
 
     return (
@@ -94,7 +91,14 @@ const PostIndexItem = ({post, sessionUser, pkey}) => {
                     </button>
                 </div>
                 <hr className="post-lines"/>
-                {post.comments && commentIndexItems}
+                <div className="comments-area">
+                    <form onSubmit={submitComment} className="new-comment">
+                        <textarea name="new-comment" value={comment} id="comment-text-area" cols="30" rows="1" 
+                        onChange={e => setComment(e.target.value)}/>
+                        <input type="submit" value="submit" id="new-comment-submit-button" />
+                    </form>
+                    {post.comments && commentIndexItems}
+                </div>
             </div>
        </ div>
     )
