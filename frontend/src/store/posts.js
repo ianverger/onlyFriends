@@ -1,4 +1,6 @@
 import csrfFetch from "./csrf"
+import { restoreSession } from "./session";
+
 
 const RECEIVE_POST = 'posts/receivePost';
 const RECEIVE_POSTS = 'posts/receivePosts';
@@ -73,6 +75,21 @@ export const createLike = (postId) => async dispatch => {
 
 export const deleteLike = (postId, likeId) => async dispatch => {
     const res = await csrfFetch(`/api/posts/${postId}/likes/${likeId}`, {method: "DELETE"});
+    const data = await res.json();
+    dispatch(receiveLikes(data));
+}
+
+export const newComment = (comment) => async dispatch => {
+    const res = await csrfFetch(`/api/posts/${comment.post_id}/comments`, {
+        method: "POST",
+        body: JSON.stringify(comment)
+    })
+    const data = await res.json();
+    dispatch(receiveLikes(data));
+}
+
+export const deleteComment = (postId, commentId) => async dispatch => {
+    const res = await csrfFetch(`/api/posts/${postId}/comments/${commentId}`, {method: "DELETE"});
     const data = await res.json();
     dispatch(receiveLikes(data));
 }

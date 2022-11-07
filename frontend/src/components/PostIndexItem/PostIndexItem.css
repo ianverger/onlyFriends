@@ -111,11 +111,15 @@
     align-items: center;
 }
 
+.n-c-d {
+    width: 100%;
+}
+
 .new-comment {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
     margin-bottom: 10px;
 }
 
@@ -152,4 +156,8 @@
     width: 80%;
     overflow-x: hidden;
     overflow-y: auto;
+}
+
+.comments-index {
+    width: 100%;
 }

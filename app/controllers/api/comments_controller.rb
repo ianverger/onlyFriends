@@ -1,5 +1,5 @@
 class Api::CommentsController < ApplicationController
-    wrap_parameters include: Like.attribute_names + ['userId', 'postId']
+    wrap_parameters include: Comment.attribute_names + ['authorId', 'postId']
     before_action :find_post
     before_action :find_comment, only: [:destroy]
 
@@ -12,12 +12,17 @@ class Api::CommentsController < ApplicationController
     # end
 
     def create
-        @post.comments.create(comment_params)
+        @comment = @post.comments.create(comment_params)
+
+        if @comment.save
+            render 'api/posts/show'
+        end
     end
 
     def destroy
         if @comment
             @comment.destroy
+            render 'api/posts/show'
         end
     end
 

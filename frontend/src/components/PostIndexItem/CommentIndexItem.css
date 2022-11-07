@@ -1,0 +1,44 @@
+.comment-card {
+    display: flex;
+    margin: 5px;
+    max-width: 80%;
+align-items: center;
+}
+
+.comment-blurb {
+    background-color: #f1f1f1da;
+    border-radius: 10px;
+    padding: 5px;
+    max-width: 80%;
+    word-wrap: break-word;
+}
+
+.comment-blurb > p {
+    margin-top: 3px;
+    font-size: 14px;
+}
+
+#delete-comment-button {
+    margin-left: 5px;
+    width: 25px;
+    height: 20px;
+    font-size: 10px;
+    font-weight: 600;
+    border-radius: 5px;
+    border: none;
+    background-color: white;
+    color:black;
+}
+
+#delete-comment-button:hover span {
+    display: none;
+}
+
+#delete-comment-button:hover:before {
+    content: "Delete";
+} 
+
+#delete-comment-button:hover {
+    width: 35px;
+    background-color: #efefef;
+}

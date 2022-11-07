@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUser, fetchUser } from '../../store/users';
-import { createLike, deleteLike, getPost, fetchPost } from '../../store/posts';
+import { createLike, deleteLike, newComment, deleteComment, getPost, fetchPost } from '../../store/posts';
 import { FindLikeId } from '../../utils/findLikeId';
 import { UserLiked } from '../../utils/userLiked';
 import * as sessionActions from '../../store/session';
 import EditPostDropdown from './EditPost';
+import CommentIndexItem from './CommentIndexItem';
 import './PostIndexItem.css';
 // import EditPostFormModal from '../PostModal/EditPostFormModal';
 
@@ -14,7 +15,7 @@ const PostIndexItem = ({post, sessionUser, pkey}) => {
     const dispatch = useDispatch();
     let userId = post.authorId;
     const selectedUser = useSelector(getUser(userId));
-    const [comment, setComment] = useState("");
+    const [commentBody, setCommentBody] = useState("");
 
     useEffect(() => {
         dispatch(fetchUser(userId));
@@ -34,7 +35,9 @@ const PostIndexItem = ({post, sessionUser, pkey}) => {
 
     const submitComment = e => {
         e.preventDefault();
-        console.log(comment)
+        const newCommentSubmit = { body: commentBody, author_id: sessionUser.id, post_id: post.id };
+        dispatch(newComment(newCommentSubmit));
+        setCommentBody("")
     }
     // useEffect(() => {
     //     dispatch(fetchPost(post.id))
@@ -60,7 +63,17 @@ const PostIndexItem = ({post, sessionUser, pkey}) => {
         )
     }
 
-    const commentIndexItems = post.comments.map(post => post.body)
+    const showNewComment = e => {
+        // console.log('twerk')
+        const newCommentInput = document.getElementById(`${pkey}-new-comment`)
+        if (newCommentInput.style.display === "none") {
+            newCommentInput.style.display = "block";
+        } else {
+            newCommentInput.style.display = "none";
+        }
+    }
+
+    const commentIndexItems = post.comments.map(comment => <CommentIndexItem comment={comment}/>)
 
     return (
         <div id="post">
@@ -86,18 +99,22 @@ const PostIndexItem = ({post, sessionUser, pkey}) => {
                 <hr className="post-lines" id="top-pl"/>
                 <div className="post-buttons">
                     {likeButton}
-                    <button className="comment-button">
+                    <button className="comment-button" onClick={showNewComment}>
                         <i style={{fontSize: "22px"}} className="fa-regular fa-comment"></i>
                     </button>
                 </div>
                 <hr className="post-lines"/>
                 <div className="comments-area">
-                    <form onSubmit={submitComment} className="new-comment">
-                        <textarea name="new-comment" value={comment} id="comment-text-area" cols="30" rows="1" 
-                        onChange={e => setComment(e.target.value)}/>
+                    <div id={`${pkey}-new-comment`} className="n-c-d" style={{display: "none"}}>
+                    <form onSubmit={submitComment} className="new-comment"  >
+                        <textarea name="new-comment" value={commentBody} id="comment-text-area" cols="30" rows="1" 
+                        onChange={e => setCommentBody(e.target.value)}/>
                         <input type="submit" value="submit" id="new-comment-submit-button" />
                     </form>
-                    {post.comments && commentIndexItems}
+                    </div>
+                    <div className="comments-index">
+                        {post.comments && commentIndexItems}
+                    </div>
                 </div>
             </div>
        </ div>
