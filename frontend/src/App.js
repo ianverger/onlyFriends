@@ -6,6 +6,7 @@ import HomePage from './components/HomePage';
 import ProfilePage from './components/ProfilePage';
 import Navigation from "./components/Navigation";
 import UsersIndex from './components/UsersIndex';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <LoginFormPage />
           </Route>
         </Switch>
+      <Footer />
     </>
   );
 }

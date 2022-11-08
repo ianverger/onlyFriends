@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
 import SignupFormModal from '../SignupFormModal';
 import './LoginForm.css';
+import SignupFormModal2 from '../SignupFormModal/SignupFormModal2';
 
 function LoginFormPage() {
   const dispatch = useDispatch();
@@ -48,17 +49,11 @@ function LoginFormPage() {
             <img src={require('../../assets/andy_demo.jpg')} id="demo-img" alt="demo-img" />
             <div className="username">Demo</div>
           </div>
-          <div id="add-card" >
-            <img src={require('../../assets/add_card.png')} id="add-account-img" alt="add-account-img" />
-            <div className="username">Add Account</div>
-          </div>
+          <SignupFormModal2 />
         </div>
       </div>
         <div className="login">
           <form className="form" onSubmit={handleSubmit}>
-            <ul>
-              {errors.map(error => <li key={error}>{error}</li>)}
-            </ul>
               <input
                 type="text"
                 className="credential"
@@ -74,12 +69,15 @@ function LoginFormPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
-              />
+                />
+                <ul>
+                  {errors.map(error => <li className="errors" key={error}>{error}</li>)}
+                </ul>
             <button type="submit" className="login-button">Log In</button>
             <Link to="#" id="forgot-pw">Forgot Password?</Link>
             <hr id ="hr"/>
           </form>
-            <div id="create-div"><SignupFormModal /></div>
+            <div id="create-div"><SignupFormModal/></div>
         </div>
     </ div>
   );

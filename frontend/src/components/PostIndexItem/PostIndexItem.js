@@ -9,6 +9,7 @@ import * as sessionActions from '../../store/session';
 import EditPostDropdown from './EditPost';
 import CommentIndexItem from './CommentIndexItem';
 import './PostIndexItem.css';
+import LikesModal from './LikesModal';
 // import EditPostFormModal from '../PostModal/EditPostFormModal';
 
 const PostIndexItem = ({post, sessionUser, pkey}) => {
@@ -90,7 +91,7 @@ const PostIndexItem = ({post, sessionUser, pkey}) => {
         }
     }
 
-    const commentIndexItems = post.comments.map(comment => <CommentIndexItem comment={comment}/>)
+    const commentIndexItems = post.comments.map(comment => <CommentIndexItem comment={comment} sessionUser={sessionUser}/>)
 
     return (
         <div id="post">
@@ -103,16 +104,11 @@ const PostIndexItem = ({post, sessionUser, pkey}) => {
                         <p>{getTimeElapsed(post.createdAt)}</p>
                     </div>
                 </div>
-               <EditPostDropdown post={post} sessionUser={sessionUser} pkey={pkey}/>
+               {sessionUser.id === userId && <EditPostDropdown post={post} sessionUser={sessionUser} pkey={pkey}/>}
             </div>
             <p className="post-body">{post.body}</p>
             <div className="likes-comments">
-               {post.likes && post.likes.length > 0 && <div id="likes-count">
-                <button className="like-emoji"> 
-                    <i style={{fontSize: "14px", color: "white"}} class="fa-solid fa-heart"></i>
-                </button>
-                <p>{post.likes.length > 1 ? `${post.likes.length} likes` : `${post.likes.length} like`}</p>
-                </div>}
+               {post.likes && post.likes.length > 0 && <LikesModal post={post}/>}
                 <hr className="post-lines" id="top-pl"/>
                 <div className="post-buttons">
                     {likeButton}

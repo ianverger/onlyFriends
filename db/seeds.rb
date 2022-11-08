@@ -135,6 +135,35 @@ ApplicationRecord.transaction do
       work: "Owner of SUR, TomTom, PUMP, and Villa Blanca (RIP)"
     )
 
+    kandi = User.create!(
+      username: "kandi",
+      email: "kandi@kandicoated.com",
+      password: "password",
+      first_name: "Kandi",
+      last_name: "Burruss",
+      birthday: "May 17, 1976",
+      gender: "Female",
+      bio: "Don't Check for me unless you got a check for me",
+      relationship: "Married",
+      hometown: "College Park, GA",
+      current_city: "Atlanta, GA",
+      work: "I got businesses okay. I'm Worldwide!"
+    )
+
+    brandi = User.create!(
+      username: "brandi",
+      email: "brandi@glanville.com",
+      password: "password",
+      first_name: "Brandi",
+      last_name: "Glanville",
+      birthday: "November 16, 1972",
+      gender: "Female",
+      bio: "Brandi Lynn Glanville is an American television personality, author, fashion designer, and former model. She is best known for appearing on the reality television series The Real Housewives of Beverly Hills and season two of The Real Housewives Ultimate Girls Trip.",
+      relationship: "Single & Ready2Mingle",
+      hometown: "Salinas, CA",
+      current_city: "Beverly Hills, CA"
+    )
+
     andy_profile_img = URI.open('https://onlyfriends-dev.s3.amazonaws.com/Andy_Cohen_profile.jpg')
     andy.profile_pic.attach(io: andy_profile_img, filename: 'Andy_Cohen_profile.jpg')
 
@@ -158,6 +187,8 @@ ApplicationRecord.transaction do
 
     lvp_profile_img = URI.open('https://onlyfriends-dev.s3.amazonaws.com/165162737_284441036375807_2148196101909746036_n.jpg')
     lvp.profile_pic.attach(io: lvp_profile_img, filename: '165162737_284441036375807_2148196101909746036_n.jpg')
+
+    
 
     Post.create!(
         body: 'When you travel the world, you can speak in any accent you like',

@@ -3,14 +3,6 @@ class Api::CommentsController < ApplicationController
     before_action :find_post
     before_action :find_comment, only: [:destroy]
 
-    # def index
-    #     @comments = @post.comments.all
-
-    #     if @comments
-    #         render :index
-    #     end
-    # end
-
     def create
         @comment = @post.comments.create(comment_params)
 

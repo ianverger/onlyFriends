@@ -1,0 +1,10 @@
+.likes-list {
+    display: flex;
+    flex-direction: column;
+}
+
+#like-card {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}

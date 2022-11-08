@@ -5,7 +5,7 @@ import { getUser, fetchUser } from '../../store/users';
 import './CommentIndexItem.css';
 import { deleteComment } from '../../store/posts';
 
-const CommentIndexItem = ({comment}) => {
+const CommentIndexItem = ({comment, sessionUser}) => {
     const dispatch = useDispatch();
     let userId = comment.author_id;
     const selectedUser = useSelector(getUser(userId));
@@ -47,15 +47,15 @@ const CommentIndexItem = ({comment}) => {
 
     return (
         <div className="comment-card">
-            {selectedUser && <Link to={`/ProfilePage/${userId}`}><img src={selectedUser.profilePicUrl || require('../../assets/blank_profile_pic.png')} id="selected-user-profile-pic"/></Link>}
+            {selectedUser && <Link to={`/ProfilePage/${userId}`}><img src={selectedUser.profilePicUrl || require('../../assets/blank_profile_pic.png')} id="comment-selected-user-profile-pic"/></Link>}
             <div className="comment-blurb">
                 <Link to={`/ProfilePage/${userId}`} id="link-text"><h5>{selectedUser && `${selectedUser.firstName} ${selectedUser.lastName}`}</h5></Link>
                 <p>{comment.body}</p>    
             </div>
             <div className="comment-extras">
-                <button onClick={handleDeleteComment} id="delete-comment-button">
+                {sessionUser.id === userId && <button onClick={handleDeleteComment} id="delete-comment-button">
                     <span><i class="fa-solid fa-ellipsis"></i></span>
-                </button>
+                </button>}
                 <p>{getTimeElapsed(comment.created_at)}</p>
             </div>
         </div>

@@ -27,8 +27,6 @@ function SignupForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // if (password === confirmPassword) {
-    //   setErrors([]);
    
       let birthday = `${Months[birthdayMonth]} ${birthdayDay}, ${birthdayYear}`;
       let firstName = preFirstName[0].toUpperCase() + preFirstName.slice(1).toLowerCase();
@@ -49,8 +47,6 @@ function SignupForm() {
       })
 
     };
-  //   return setErrors(['Confirm Password field must be the same as the Password field']);
-  // };
 
   useEffect(() => {
     getDays();
@@ -80,13 +76,19 @@ function SignupForm() {
 
   return (
     <div id="SignupForm">
-      <h1>Sign Up</h1>
-      <h4 id="h4">It's quick and easy.</h4>
+      <div id="su-top">
+          <div id="su-top-left">
+            <h1>Sign Up</h1>
+            <h4 id="h4">It's quick and easy.</h4>
+          </div>
+          <div id="su-top-right">
+            <ul>
+              {errors.map(error => <li className="su-errors" key={error}>{error}</li>)}
+            </ul>
+          </div>
+      </div>
       <hr id="hr" />
       <form id="form" onSubmit={handleSubmit}>
-        <ul>
-          {errors.map(error => <li key={error}>{error}</li>)}
-        </ul>
           <input
             type="text"
             className="inputs"

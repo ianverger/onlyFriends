@@ -41,13 +41,11 @@ function AddFriendButton({sessionUser, selectedUser}) {
     } else {
         button = <button onClick={handleAdd} id="add-friend-button">Add Friend</button>
     }
-// debugger
 
     if (!currentUser) return null;
     
     return (
         <>
-        {/* <h1>hi</h1> */}
             {button}
         </>
     )

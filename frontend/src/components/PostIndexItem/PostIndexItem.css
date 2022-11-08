@@ -61,6 +61,15 @@
     margin-top: 15px;
     display: flex;
     align-items: center;
+    border: none;
+    background-color: white;
+}
+
+#likes-count:hover {
+    cursor: pointer;
+ text-decoration: underline;
+ font-weight: bold;
+ color: rgb(96, 94, 94);
 }
 
 .like-emoji {

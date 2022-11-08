@@ -7,11 +7,24 @@ import './UserIndexItem.css';
 
 const UserIndexItem = ({user, sessionUser}) => {
     const history = useHistory();
+    const friendIds = sessionUser ? sessionUser.friends : null;
+    const outPendIds = sessionUser ? sessionUser.outPending: null;
+    const inPendIds = sessionUser? sessionUser.inPending: null;
 
     const handleClick = () => {
         const to = `/ProfilePage/${user.id}`;
         history.push(to);
         window.location.reload()
+    }
+
+    let friendStatus;
+
+    if (friendIds && friendIds.includes(user.id)) {
+        friendStatus = <div id="status-f">Friends</div>
+    } else if (outPendIds && outPendIds.includes(user.id)) {
+        friendStatus = <div id="status-r">Requested</div>
+    } else if (inPendIds && inPendIds.includes(user.id)) {
+        friendStatus = <div id="status-p">Pending</div>
     }
     
     return (
@@ -24,6 +37,8 @@ const UserIndexItem = ({user, sessionUser}) => {
                     <h6>{user.birthday}</h6>
                 </div>
                 <div id="user-info-right">
+                    {/* <AddFriendButton sessionUser={sessionUser} selectedUser={user}/> */}
+                    {friendStatus}
                 </div>
             </div>
         </div>
