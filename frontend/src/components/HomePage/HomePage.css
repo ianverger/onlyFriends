@@ -44,3 +44,9 @@
 
 }
 
+@media screen and (max-width: 650px) {
+    #new-post {
+        width: 90%;
+    }
+}
+

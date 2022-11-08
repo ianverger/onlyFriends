@@ -8,14 +8,14 @@
     flex-direction: column;
 }
 
-#uip-title > h2{
+#uip-title > h2 {
     /* display: flex; */
     /* justify-content: left; */
     position: relative;
     left: -215px;
     top: 12px;
     /* background-color: green; */
-    text-align: left;
+    /* text-align: left; */
 }
 
 #users-index {
@@ -25,4 +25,15 @@
    flex-wrap: wrap;
     justify-content: center;
     gap: 15px;
+}
+
+@media screen and (max-width: 650px) {
+    #uip-title > h2 {
+        left: 0;
+    }
+
+    #users-index {
+        width: 90%;
+    }
+        
 }

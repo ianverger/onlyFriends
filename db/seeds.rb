@@ -188,7 +188,17 @@ ApplicationRecord.transaction do
     lvp_profile_img = URI.open('https://onlyfriends-dev.s3.amazonaws.com/165162737_284441036375807_2148196101909746036_n.jpg')
     lvp.profile_pic.attach(io: lvp_profile_img, filename: '165162737_284441036375807_2148196101909746036_n.jpg')
 
-    
+    kandi_profile_img = URI.open('https://onlyfriends-dev.s3.amazonaws.com/rs_1200x1200-220303130006-kandi2.jpeg')
+    kandi.profile_pic.attach(io: kandi_profile_img, filename: 'rs_1200x1200-220303130006-kandi2.jpeg')
+
+    brandi_profile_img = URI.open('https://onlyfriends-dev.s3.amazonaws.com/rs_1200x1200-220623122420-brandi-glanville-rhugt-season-2.webp')
+    brandi.profile_pic.attach(io: brandi_profile_img, filename: 'rs_1200x1200-220623122420-brandi-glanville-rhugt-season-2.webp')
+
+
+    Post.create!(
+      body: "Who's tuning in for Watch What Happens Live tonight?",
+      author_id: andy.id
+    )
 
     Post.create!(
         body: 'When you travel the world, you can speak in any accent you like',
@@ -227,7 +237,7 @@ ApplicationRecord.transaction do
 
 
     Post.create!(
-        body: "Life's not all diamonds and rose' ..but it should be",
+        body: "Life's not all diamonds and rosé ..but it should be",
         author_id: lvp.id
     )
 
@@ -237,19 +247,19 @@ ApplicationRecord.transaction do
         confirmed: true
     )
 
-     Friendship.create!(
+    Friendship.create!(
         requester_id: 1,
         requestee_id: 3,
         confirmed: true
     )
 
-     Friendship.create!(
+    Friendship.create!(
         requester_id: 4,
         requestee_id: 1,
         confirmed: false
     )
 
-     Friendship.create!(
+    Friendship.create!(
         requester_id: 5,
         requestee_id: 1,
         confirmed: false
@@ -259,16 +269,154 @@ ApplicationRecord.transaction do
       requester_id: 6,
       requestee_id: 1,
       confirmed: false
-  )
+    )
 
-    # More users
-    # 10.times do 
-    #   User.create!({
-    #     username: Faker::Internet.unique.username(specifier: 3),
-    #     email: Faker::Internet.unique.email,
-    #     password: 'password'
-    #   }) 
-    # end
+    Friendship.create!(
+      requester_id: 1,
+      requestee_id: 9,
+      confirmed: true
+    )
+
+    Friendship.create!(
+      requester_id: 1,
+      requestee_id: 10,
+      confirmed: true
+    )
+
+    Friendship.create!(
+      requester_id: 2,
+      requestee_id: 3,
+      confirmed: true
+    )
+
+    Friendship.create!(
+      requester_id: 3,
+      requestee_id: 4,
+      confirmed: true
+    )
+
+    Friendship.create!(
+      requester_id: 4,
+      requestee_id: 5,
+      confirmed: true
+    )
+
+    Friendship.create!(
+      requester_id: 6,
+      requestee_id: 9,
+      confirmed: true
+    )
+
+    Friendship.create!(
+      requester_id: 8,
+      requestee_id: 9,
+      confirmed: true
+    )
+
+    Like.create!(
+      post_id: 1,
+      user_id: 2
+    )
+
+    Like.create!(
+      post_id: 1,
+      user_id: 3
+    )
+
+    Like.create!(
+      post_id: 1,
+      user_id: 4
+    )
+
+    Like.create!(
+      post_id: 1,
+      user_id: 5
+    )
+
+    Like.create!(
+      post_id: 1,
+      user_id: 6
+    )
+
+    Like.create!(
+      post_id: 8,
+      user_id: 6
+    )
+
+    Like.create!(
+      post_id: 8,
+      user_id: 5
+    )
+
+    Like.create!(
+      post_id: 8,
+      user_id: 4
+    )
+
+    Like.create!(
+      post_id: 7,
+      user_id: 1
+    )
+
+    Like.create!(
+      post_id: 7,
+      user_id: 6
+    )
+
+    Like.create!(
+      post_id: 6,
+      user_id: 3
+    )
+
+    Like.create!(
+      post_id: 3,
+      user_id: 1
+    )
+
+    Like.create!(
+      post_id: 2,
+      user_id: 4
+    )
+
+    Like.create!(
+      post_id: 6,
+      user_id: 2
+    )
+
+    Like.create!(
+      post_id: 2,
+      user_id: 1
+    )
+
+    Comment.create!(
+      post_id: 6,
+      author_id: kandi.id,
+      body: "Don't check for me unless you got a CHECK for me"
+    )
+
+    Comment.create!(
+      post_id: 8,
+      author_id: andy.id,
+      body: "Come back!"
+    )
+
+    Comment.create!(
+      post_id: 7,
+      author_id: brandi.id,
+      body: "go off sis"
+    )
+
+    Comment.create!(
+      post_id: 8,
+      author_id: camille.id,
+      body: "Lisa, I came into SUR and didn't see you. Call me xx"
+    )
+
+    Comment.create!(
+      post_id: 1,
+      author_id: brandi.id,
+      body: "Have me on!"
+    )
   
     puts "Done!"
   end

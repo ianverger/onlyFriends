@@ -208,3 +208,48 @@
     left: -100px;
 }
 
+@media screen and (max-width: 1125px) {
+    #body {
+        display: flex;
+        flex-direction: column;
+        width: 600px;
+        align-items: center;
+    }
+
+    #left {
+        width: 100%
+    }
+    
+    #right {
+        width: 100%
+    }
+}
+/* 
+@media screen and (max-width: 1000px) {
+    #body {
+        width: 80%;
+    }
+} */
+
+@media screen and (max-width: 650px) {
+    #body {
+        width: 100%;
+    }
+
+    #left {
+        width: 90%
+    }
+    
+    #right {
+        width: 100%;
+        margin-left: 10%;
+    }
+
+    #new-post-profile {
+        width: 90%;
+    }
+
+    #new-post-profile-pic {
+        margin-left: 0px;
+    }
+}
