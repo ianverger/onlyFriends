@@ -22,6 +22,31 @@ const PostIndexItem = ({post, sessionUser, pkey}) => {
     }, [userId])
 
     
+    // makes milliseconds to easy-readable string
+    const formatDateTime = ms => {
+        const sec = Math.floor(ms / 1000)
+        if (sec < 60) return `${sec}s`
+        const min = Math.floor(sec / 60)
+        if (min < 60) return `${min}m`
+        const hr = Math.floor(min / 60)
+        if (hr < 24) return `${hr}h`
+        const day = Math.floor(hr / 24)
+        if (day < 7) return `${day}d`
+        const week = Math.floor(day / 7)
+        return `${week}w`
+    }
+    
+    const getTimeElapsed = from => {
+        const previous = new Date(from);
+        const now = new Date(); // get current datetime
+        const comparedTime = (now.valueOf() - previous.valueOf());
+        // get compared time in "milliseconds"
+    
+        return formatDateTime(comparedTime)
+    }
+
+    // timer sourced from : https://stackoverflow.com/questions/60936672/javascript-count-up-timer-from-timestamp-in-rows-column
+
     const handleLike = e => {
         e.preventDefault();
         dispatch(createLike(post.id)); 
@@ -39,13 +64,6 @@ const PostIndexItem = ({post, sessionUser, pkey}) => {
         dispatch(newComment(newCommentSubmit));
         setCommentBody("")
     }
-    // useEffect(() => {
-    //     dispatch(fetchPost(post.id))
-    // }, [handleLike, handleUnlike])
-    
-    // useEffect(() => {
-    //     dispatch(sessionActions.restoreSession);
-    // }, [handleLike, handleUnlike])
 
     let likeButton;
     
@@ -64,7 +82,6 @@ const PostIndexItem = ({post, sessionUser, pkey}) => {
     }
 
     const showNewComment = e => {
-        // console.log('twerk')
         const newCommentInput = document.getElementById(`${pkey}-new-comment`)
         if (newCommentInput.style.display === "none") {
             newCommentInput.style.display = "block";
@@ -82,14 +99,14 @@ const PostIndexItem = ({post, sessionUser, pkey}) => {
                     {selectedUser && <Link to={`/ProfilePage/${userId}`}><img src={selectedUser.profilePicUrl || require('../../assets/blank_profile_pic.png')} id="selected-user-profile-pic"/></Link>}
                     <div id="user-info">
                         <Link to={`/ProfilePage/${userId}`} id="link-text"><h4>{selectedUser && `${selectedUser.firstName} ${selectedUser.lastName}`}</h4></Link>
-                        <p>{selectedUser && `${post.createdAt}`}</p>
+                        {/* <p>{selectedUser && `${post.createdAt}`}</p> */}
+                        <p>{getTimeElapsed(post.createdAt)}</p>
                     </div>
                 </div>
                <EditPostDropdown post={post} sessionUser={sessionUser} pkey={pkey}/>
             </div>
             <p className="post-body">{post.body}</p>
             <div className="likes-comments">
-               {/* <div>{likeButton}</div> */}
                {post.likes && post.likes.length > 0 && <div id="likes-count">
                 <button className="like-emoji"> 
                     <i style={{fontSize: "14px", color: "white"}} class="fa-solid fa-heart"></i>

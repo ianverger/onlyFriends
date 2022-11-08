@@ -2,7 +2,14 @@
     display: flex;
     margin: 5px;
     max-width: 80%;
-align-items: center;
+    align-items: center;
+}
+
+.comment-extras > p {
+    color: grey;
+    font-size: smaller;
+    font-weight: lighter;
+    margin-left: 8px;
 }
 
 .comment-blurb {
@@ -41,4 +48,5 @@ align-items: center;
 #delete-comment-button:hover {
     width: 35px;
     background-color: #efefef;
+    cursor: pointer;
 }
