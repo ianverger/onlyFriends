@@ -38,3 +38,15 @@
     display: none;
 }
 
+@media screen and (max-width: 430px) {
+    #inc-fr-num {
+        right: 55px;
+    }
+}
+
+@media screen and (max-width: 413px) {
+    #inc-fr-num {
+        right: 40px;
+    }
+}
+

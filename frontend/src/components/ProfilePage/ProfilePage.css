@@ -20,7 +20,7 @@
     box-shadow: 0 0 0 1.5px rgb(223, 222, 222);
 }
 
-#profile-header{
+#profile-header {
     display: flex;
     align-items: center;
     background-color: white;
@@ -53,13 +53,20 @@
 
 #user-name > * {
     position: relative;
-    left: -38px;
+    left: -25px;
+    width: 300px;
 }
 
 #add-friend-button-div {
-    position: relative;
+    /* position: relative;
    left: 310px;
-   top: 70px;
+   top: 70px; */
+   height: 100%;
+   /* width: 46%; */
+   width: inherit;
+   display: flex;
+   align-items: flex-end;
+   justify-content: flex-end;
 }
 
 #body {
@@ -223,13 +230,17 @@
     #right {
         width: 100%
     }
-}
-/* 
-@media screen and (max-width: 1000px) {
-    #body {
-        width: 80%;
+
+    #profile-header {
+        width: 100vw;
     }
-} */
+}
+
+@media screen and (max-width: 800px) {
+    #user-name {
+        width: 30%;
+    }
+}
 
 @media screen and (max-width: 650px) {
     #body {
@@ -251,5 +262,23 @@
 
     #new-post-profile-pic {
         margin-left: 0px;
+    }
+
+    #user-name {
+        width: 20%;
+    }
+
+    #user-name > h1 {
+        font-size: 28px;
+        padding-left: 10px;
+    }
+
+    #user-name > p {
+        padding-left: 10px;
+    }
+
+    #profile-pic {
+        height: 150px;
+        width: 150px;
     }
 }

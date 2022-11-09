@@ -47,6 +47,11 @@
 @media screen and (max-width: 650px) {
     #new-post {
         width: 90%;
+        padding: 10px;
+    }
+
+    #new-post-button{
+        font-size: 14px;
     }
 }
 
