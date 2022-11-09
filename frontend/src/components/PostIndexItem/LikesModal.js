@@ -6,14 +6,14 @@ import './LikesModal.css'
 function LikesModal({post}) {
     const [showModal, setShowModal] = useState();
 
-    const likeIndexItems = post.likes.map(like => <LikeIndexItem like={like}/>)
+    const likeIndexItems = post.likes.map((like, idx) => <LikeIndexItem key={idx} like={like}/>)
     return (
         <>
         <button id="likes-count" onClick={() => setShowModal(true)}>
-                <button className="like-emoji"> 
-                    <i style={{fontSize: "14px", color: "white"}} class="fa-solid fa-heart"></i>
-                </button>
-                <p>{post.likes.length > 1 ? `${post.likes.length} likes` : `${post.likes.length} like`}</p>
+            <div className="like-emoji"> 
+                <i style={{fontSize: "14px", color: "white"}} className="fa-solid fa-heart"></i>
+            </div>
+            <p id="likes-count-text">{post.likes.length > 1 ? `${post.likes.length} likes` : `${post.likes.length} like`}</p>
         </button>
         {showModal && (
             <Modal onClose={() => setShowModal(false)}>

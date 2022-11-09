@@ -67,19 +67,25 @@
 
 #likes-count:hover {
     cursor: pointer;
- text-decoration: underline;
- font-weight: bold;
- color: rgb(96, 94, 94);
+    font-weight: bold;
+    color: rgb(96, 94, 94);
 }
 
 .like-emoji {
-   border: none;
-   border-radius: 50%;
-   height: 25px;
-   width: 25px;
-   background-color: red;
-   margin-right: 8px;
-   margin-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    background-color: red;
+    margin-right: 8px;
+    margin-left: 20px;
+}
+
+#likes-count-text:hover {
+    text-decoration: underline;
 }
 
 #top-pl {

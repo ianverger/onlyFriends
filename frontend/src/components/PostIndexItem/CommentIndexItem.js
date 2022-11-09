@@ -54,7 +54,7 @@ const CommentIndexItem = ({comment, sessionUser}) => {
             </div>
             <div className="comment-extras">
                 {sessionUser.id === userId && <button onClick={handleDeleteComment} id="delete-comment-button">
-                    <span><i class="fa-solid fa-ellipsis"></i></span>
+                    <span><i className="fa-solid fa-ellipsis"></i></span>
                 </button>}
                 <p>{getTimeElapsed(comment.created_at)}</p>
             </div>

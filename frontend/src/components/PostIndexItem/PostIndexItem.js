@@ -91,7 +91,7 @@ const PostIndexItem = ({post, sessionUser, pkey}) => {
         }
     }
 
-    const commentIndexItems = post.comments.map(comment => <CommentIndexItem comment={comment} sessionUser={sessionUser}/>)
+    const commentIndexItems = post.comments.map((comment, idx) => <CommentIndexItem key={idx} comment={comment} sessionUser={sessionUser}/>)
 
     return (
         <div id="post">

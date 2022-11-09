@@ -4,7 +4,7 @@ import './UserFriends.css';
 
 
 const UserFriends = ({friends}) => {
-    const friendCards = Object.values(friends).map(friend => <FriendCard friend={friend}/>)
+    const friendCards = Object.values(friends).map((friend, idx) => <FriendCard key={idx} friend={friend}/>)
     
     return (
         <div id="friends-div">

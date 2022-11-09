@@ -35,7 +35,7 @@ function FriendRequests({ sessionUser }) {
     return (
         <>
             <button onClick={openMenu} style={{fontSize: "20px", height: "45px", width: "45px"}} className="nav-icon" id="friend-request-icon">
-                <i class="fa-solid fa-user-group"></i>
+                <i className="fa-solid fa-user-group"></i>
             </button>
             <div id={incomingReqs.length > 0 ? "inc-fr-num" : "no-inc-reqs"}>
                 {incomingReqs.length}

@@ -62,7 +62,7 @@ function ProfilePage() {
 
     const profilePicSrc = selectedUser.profilePicUrl ? selectedUser.profilePicUrl : require('../../assets/blank_profile_pic.png');
     const wallPosts = allPosts.filter(post => String(post.authorId) === userId);
-    const wallPostIndexItems = wallPosts.map(post => <PostIndexItem post={post} sessionUser={sessionUser} className="posts"/>).reverse();
+    const wallPostIndexItems = wallPosts.map((post, idx) => <PostIndexItem key={idx} post={post} sessionUser={sessionUser} className="posts"/>).reverse();
     
     return (
         <div id="profile-page">
@@ -73,7 +73,7 @@ function ProfilePage() {
                 {(sessionUser.id !== selectedUser.id) && <div id="edit-profile-pic-placeholder"/>}
                 <div id="user-name">
                     <h1>{selectedUser && `${selectedUser.firstName} ${selectedUser.lastName}`}</h1>
-                    <p>{selectedUser && selectedUser.friends.length > 1 ? `${selectedUser.friends.length} friends` : `${selectedUser.friends.length} friend`}</p>
+                    <p>{selectedUser && selectedUser.friends.length === 1 ? `${selectedUser.friends.length} friend` : `${selectedUser.friends.length} friends`}</p>
                 </div>
                 <div id="add-friend-button-div">
                     {(sessionUser.id !== selectedUser.id) && <AddFriendButton sessionUser={sessionUser} selectedUser={selectedUser}/>}

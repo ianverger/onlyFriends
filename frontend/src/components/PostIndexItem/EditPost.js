@@ -28,7 +28,7 @@ function EditPostDropdown({post, sessionUser, pkey}) {
     return (
         <div>
             <button onClick={() => handleClick()} className="ellipses" id={`${pkey}-ellipses`}>
-                <i class="fa-solid fa-ellipsis"></i>
+                <i className="fa-solid fa-ellipsis"></i>
             </button>
             <ul id={`${pkey}-ub`} className="update-buttons" style={{display:"none"}}> 
                 <EditPostFormModal key="0" post={post} id="edit-post"/>
