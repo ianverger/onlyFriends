@@ -73,7 +73,7 @@ function ProfilePage() {
                 {(sessionUser.id !== selectedUser.id) && <div id="edit-profile-pic-placeholder"/>}
                 <div id="user-name">
                     <h1>{selectedUser && `${selectedUser.firstName} ${selectedUser.lastName}`}</h1>
-                    <p>{selectedUser && `${selectedUser.friends.length} friends`}</p>
+                    <p>{selectedUser && selectedUser.friends.length > 1 ? `${selectedUser.friends.length} friends` : `${selectedUser.friends.length} friend`}</p>
                 </div>
                 <div id="add-friend-button-div">
                     {(sessionUser.id !== selectedUser.id) && <AddFriendButton sessionUser={sessionUser} selectedUser={selectedUser}/>}

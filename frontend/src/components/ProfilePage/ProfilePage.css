@@ -282,3 +282,9 @@
         width: 150px;
     }
 }
+
+@media screen and (max-width: 490px) {
+    #user-name > h1 {
+   font-size: 20px;
+    }
+}
