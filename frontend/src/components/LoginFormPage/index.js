@@ -74,7 +74,7 @@ function LoginFormPage() {
                   {errors.map(error => <li className="errors" key={error}>{error}</li>)}
                 </ul>
             <button type="submit" className="login-button">Log In</button>
-            <Link to="#" id="forgot-pw">Forgot Password?</Link>
+            <Link to={{ pathname: "https://ianverger.com/"}} target="_blank" id="forgot-pw">Meet the Creator?</Link>
             <hr id ="hr"/>
           </form>
             <div id="create-div"><SignupFormModal/></div>
