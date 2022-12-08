@@ -5,6 +5,7 @@ import ProfileButton from './ProfileButton';
 import SignupFormModal from '../SignupFormModal';
 import './Navigation.css';
 import FriendRequests from './FriendRequests';
+import NavSearch from './NavSearch';
 
 function Navigation() {
   const sessionUser = useSelector(state => state.session.user);
@@ -19,9 +20,10 @@ function Navigation() {
         <button onClick={(e) => history.push('/HomePage')} className="nav-icon">
             <img src={require('../../assets/of_logo.png')} style={{fontSize: "20px", height: "45px", width: "45px", borderRadius: "50%"}}/>
         </button>
-        <button onClick={(e) => history.push('/users')} style={{fontSize: "20px", height: "45px", width: "45px"}} className="nav-icon">
+        {/* <button onClick={(e) => history.push('/users')} style={{fontSize: "20px"}} id="of-search" className="nav-icon">
             <i className="fa-solid fa-magnifying-glass"></i>
-        </button>
+        </button> */}
+        <NavSearch />
       </>
     );
 
