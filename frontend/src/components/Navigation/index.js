@@ -23,7 +23,7 @@ function Navigation() {
         {/* <button onClick={(e) => history.push('/users')} style={{fontSize: "20px"}} id="of-search" className="nav-icon">
             <i className="fa-solid fa-magnifying-glass"></i>
         </button> */}
-        <NavSearch />
+        <NavSearch sessionUser={sessionUser}/>
       </>
     );
 

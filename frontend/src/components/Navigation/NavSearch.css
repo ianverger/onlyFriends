@@ -57,3 +57,14 @@
     outline:0px none transparent;
     background-color: #EFEFEF;
 }
+
+.suggestions li {
+    list-style: none;
+    width: 95%;
+}
+
+.search-user-cards > div {
+    display: flex;
+    /* width: 96%; */
+    /* flex-direction: column; */
+}

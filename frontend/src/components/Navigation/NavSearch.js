@@ -5,10 +5,13 @@ import { fetchAllUsers, getAllUsers } from '../../store/users';
 import * as sessionActions from '../../store/session';
 import './NavSearch.css'
 
-function NavSearch() {
+function NavSearch({sessionUser}) {
     const dispatch = useDispatch();
     const history = useHistory();
     const allUsers = useSelector(getAllUsers);
+    const friendIds = sessionUser ? sessionUser.friends : null;
+    const outPendIds = sessionUser ? sessionUser.outPending: null;
+    const inPendIds = sessionUser? sessionUser.inPending: null;
     const [showMenu, setShowMenu] = useState(false);
     const [matchedUsers, setMatchedUsers] = useState([]);
     const [inputValue, setInputValue] = useState("");
@@ -46,14 +49,24 @@ function NavSearch() {
     }
 
     const matchedUsersList = matchedUsers.map((user, idx) => {
+        let friendStatus;
 
+        if (friendIds && friendIds.includes(user.id)) {
+            friendStatus = <p>Friend</p>
+        } else if (outPendIds && outPendIds.includes(user.id)) {
+            friendStatus = <p>Requested</p>
+        } else if (inPendIds && inPendIds.includes(user.id)) {
+            friendStatus = <p>Pending</p>
+        }
 
         return (
             <li key={idx}>
-                <button id={`${idx}-user`} className="user-cards" >
+                <button id={`${idx}-user`} className="search-user-cards" >
                     <div>
-            <img src={user.profilePicUrl || require('../../assets/blank_profile_pic.png')} id="selected-user-profile-pic"/>
-                    {user.username}
+                        <img src={user.profilePicUrl || require('../../assets/blank_profile_pic.png')} id="selected-user-profile-pic"/>
+                        <p>{user.username}</p>
+                        <p>{user.firstName} {user.lastName}</p>
+                        <p>{friendStatus}</p>
                     </div>
                 </button>
                 {/* onClick={(e) => handleSubmit(user)} */}
@@ -68,8 +81,9 @@ function NavSearch() {
     
     //   return () => document.removeEventListener("click", closeMenu);
     // }, [showMenu]);
-//   console.log(users)
-console.log(matchedUsers)
+
+  console.log(users)
+// console.log(matchedUsers)
     return (
         <>
             <button onClick={openMenu} style={{fontSize: "20px"}} id="of-search" className="nav-icon">
