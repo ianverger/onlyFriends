@@ -30,10 +30,10 @@ function NavSearch({sessionUser}) {
         dispatch(fetchAllUsers());
     }, []);
 
-    const [users, setUsers] = useState(allUsers);
+    // const [users, setUsers] = useState(allUsers);
 
-    const findMatches = function(wordToMatch, users) {
-        return users.filter(user => {
+    const findMatches = function(wordToMatch, allUsers) {
+        return allUsers.filter(user => {
             const regex = new RegExp(wordToMatch, 'gi');
             return user.username.match(regex)        
         })
@@ -44,8 +44,15 @@ function NavSearch({sessionUser}) {
         const value = e.target.value;
         let matches = [];
 
-        if (value) matches = findMatches(value, users);
+        if (value) matches = findMatches(value, allUsers);
         setMatchedUsers(matches);
+    }
+
+    const handleSubmit = (user) => {
+        // console.log(user.id)
+        const to = `/ProfilePage/${user.id}`;
+        history.push(to);
+        window.location.reload()
     }
 
     const matchedUsersList = matchedUsers.map((user, idx) => {
@@ -61,7 +68,7 @@ function NavSearch({sessionUser}) {
 
         return (
             <li key={idx}>
-                <button id={`${idx}-user`} className="search-user-cards" >
+                <button id={`${idx}-user`} className="search-user-cards" onClick={(e) => handleSubmit(user)}>
                     <div>
                         <img src={user.profilePicUrl || require('../../assets/blank_profile_pic.png')} id="selected-user-profile-pic"/>
                         <p>{user.username}</p>
@@ -69,7 +76,6 @@ function NavSearch({sessionUser}) {
                         <p>{friendStatus}</p>
                     </div>
                 </button>
-                {/* onClick={(e) => handleSubmit(user)} */}
             </li>
         );
     });
@@ -82,8 +88,10 @@ function NavSearch({sessionUser}) {
     //   return () => document.removeEventListener("click", closeMenu);
     // }, [showMenu]);
 
-  console.log(users)
+  console.log(allUsers)
 // console.log(matchedUsers)
+
+
     return (
         <>
             <button onClick={openMenu} style={{fontSize: "20px"}} id="of-search" className="nav-icon">
