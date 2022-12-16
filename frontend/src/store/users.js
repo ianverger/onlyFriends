@@ -22,7 +22,7 @@ export const getFriends = (friends) => state => {
         return friendUsers;
     } else {
         Object.values(state.users).forEach(user => {
-            if (friends.includes(user.id)) {
+            if (friends?.includes(user.id)) {
                 friendUsers.push(user);
             }
         })

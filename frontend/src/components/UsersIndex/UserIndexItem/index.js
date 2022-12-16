@@ -11,10 +11,10 @@ const UserIndexItem = ({user, sessionUser}) => {
     const outPendIds = sessionUser ? sessionUser.outPending: null;
     const inPendIds = sessionUser? sessionUser.inPending: null;
 
-    const handleClick = () => {
-        const to = `/ProfilePage/${user.id}`;
-        history.push(to);
-        window.location.reload()
+    const handleClick = (user) => {
+        // const to = `/ProfilePage/${user.id}`;
+        history.push(`/ProfilePage/${user.id}`);
+        // window.location.reload()
     }
 
     let friendStatus;
@@ -28,7 +28,7 @@ const UserIndexItem = ({user, sessionUser}) => {
     }
     
     return (
-        <div id="index-user-card" onClick={handleClick}>
+        <div id="index-user-card" onClick={(e) => handleClick(user)}>
             <img src={user.profilePicUrl || require('../../../assets/blank_profile_pic.png')} id="selected-user-profile-pic"/>
             <div id="index-user-info">
                 <div id="user-info-left">

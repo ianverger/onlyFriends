@@ -27,7 +27,7 @@ function HomePage() {
     
     const profilePicSrc = sessionUser.profilePicUrl ? sessionUser.profilePicUrl : require('../../assets/blank_profile_pic.png');
     const postIndexItems = allPosts.map((post, idx) => <PostIndexItem key={idx} post={post} sessionUser={sessionUser} pkey={idx} className="posts"/>).reverse();
-    // console.log(postIndexItems)
+
     return (
         <div id="home-page">
             <div id="new-post">

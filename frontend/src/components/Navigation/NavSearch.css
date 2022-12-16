@@ -8,7 +8,7 @@
     position: absolute;
     width: 330px;
     overflow: auto;
-    padding: 10px 10px 10px 10px;
+    padding: 2px 10px 10px 10px;
     box-shadow: 1px 4px 4px 0px rgba(135, 135, 135, 0.4);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -58,9 +58,33 @@
     background-color: #EFEFEF;
 }
 
+.suggestions {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+
+}
+
 .suggestions li {
+  
     list-style: none;
-    width: 95%;
+    width: 80%;
+
+}
+
+.search-user-cards {
+    width: 100%;
+    border: none;
+    background-color: inherit;
+    border-radius: 5px;
+    padding: 7px;
+}
+
+.search-user-cards:hover {
+    background-color: #eaeaea;
+    cursor: pointer;
 }
 
 .search-user-cards > div {
@@ -68,3 +92,30 @@
     /* width: 96%; */
     /* flex-direction: column; */
 }
+
+#filter-text {
+    /* background-color: green; */
+    font-weight: bold;
+    text-align: center;
+    padding-top: 0px;
+    width: 70%;
+}
+
+.suc-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    text-align: left;
+
+}
+
+.suc-text > p:first-child {
+    font-weight: bold;
+}
+
+
+.suc-text > p:nth-child(2) {
+    color: #918e8e;
+}
+

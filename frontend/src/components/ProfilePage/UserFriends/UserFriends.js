@@ -9,7 +9,7 @@ const UserFriends = ({friends}) => {
     return (
         <div id="friends-div">
             <h3>Friends</h3>
-            <div id="friend-cards">{friendCards}</div>
+            {friends.length > 0 && <div id="friend-cards">{friendCards}</div>}
         </div>
     ) 
 }

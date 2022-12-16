@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory, useParams } from "react-router-dom";
+import { Link, useHistory, useParams } from "react-router-dom";
 import { fetchAllUsers, getAllUsers } from '../../store/users';
 import * as sessionActions from '../../store/session';
 import './NavSearch.css'
@@ -49,10 +49,10 @@ function NavSearch({sessionUser}) {
     }
 
     const handleSubmit = (user) => {
-        // console.log(user.id)
-        const to = `/ProfilePage/${user.id}`;
-        history.push(to);
-        window.location.reload()
+        history.push(`/ProfilePage/${user.id}`);
+        closeMenu();
+        setInputValue("");
+        setMatchedUsers([]);
     }
 
     const matchedUsersList = matchedUsers.map((user, idx) => {
@@ -71,10 +71,11 @@ function NavSearch({sessionUser}) {
                 <button id={`${idx}-user`} className="search-user-cards" onClick={(e) => handleSubmit(user)}>
                     <div>
                         <img src={user.profilePicUrl || require('../../assets/blank_profile_pic.png')} id="selected-user-profile-pic"/>
-                        <p>{user.username}</p>
-                        <p>{user.firstName} {user.lastName}</p>
-                        <p>{friendStatus}</p>
-                    </div>
+                        <div className="suc-text">
+                            <p>{user.firstName} {user.lastName}</p>
+                            <p>{friendStatus}</p>
+                        </div>
+                    </div>   
                 </button>
             </li>
         );
@@ -88,7 +89,7 @@ function NavSearch({sessionUser}) {
     //   return () => document.removeEventListener("click", closeMenu);
     // }, [showMenu]);
 
-  console.log(allUsers)
+//   console.log(allUsers)
 // console.log(matchedUsers)
 
 
@@ -102,13 +103,14 @@ function NavSearch({sessionUser}) {
                 <div id="search-drop">
                     <div id="search-drop-top">
                         <button onClick={closeMenu} id="sdbb">
-                            <i class="fa-solid fa-arrow-left" id="sd-back-button"></i>
+                            <i className="fa-solid fa-arrow-left" id="sd-back-button"></i>
                         </button>
-                        <input type="text" id="search-bar" onChange = {displayMatches} value={inputValue} />
+                        <input type="text" id="search-bar" autoFocus="autoFocus" onChange = {displayMatches} value={inputValue} />
                     </div>
                     <ul className="suggestions">
-                        {matchedUsersList.length > 0 ? matchedUsersList : (<li style={{padding: "10px"}}>Filter for a user</li>)}
+                        {matchedUsersList.length > 0 ? matchedUsersList : (<li id="filter-text" style={{padding: "10px"}}>Filter for a user...</li>)}
                     </ul>
+                    <Link to="/users" onClick={closeMenu}>See all Users</Link>
                 </div>
             )}
         </>
