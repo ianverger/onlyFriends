@@ -30,11 +30,26 @@ function HomePage() {
 
     return (
         <div id="home-page">
-            <div id="new-post">
-                {sessionUser && <Link to={`/ProfilePage/${userId}`}><img src={profilePicSrc} id="selected-user-profile-pic"/></Link>}
-                <NewPostFormModal sessionUser={sessionUser}/>
+            <div id="hp-center">
+                <div id="new-post">
+                    {sessionUser && <Link to={`/ProfilePage/${userId}`}><img src={profilePicSrc} id="selected-user-profile-pic"/></Link>}
+                    <NewPostFormModal sessionUser={sessionUser}/>
+                </div>
+                {postIndexItems}
             </div>
-            {postIndexItems}
+            <div id="hp-ads">
+                <h4>Sponsored:</h4>
+                <a href="https://ianverger.github.io/Whats-the-vibe-tn/" target="_blank">
+                    <h4>What's the vibe tn?</h4>
+                    <img src={require('../../assets/vibe_screenshot.png')} ></img>
+                    <p>Looking for something to do tonight?</p>
+                </a>
+                <a href="https://allora.onrender.com/" target="_blank">
+                    <h4>Allora</h4>
+                    <img src={require('../../assets/Allora_screenshot.jpeg')} ></img>
+                    <p>Plan your next trip abroad!</p>
+                </a>
+            </div>
         </div>
 
     )

@@ -35,7 +35,8 @@ function NavSearch({sessionUser}) {
     const findMatches = function(wordToMatch, allUsers) {
         return allUsers.filter(user => {
             const regex = new RegExp(wordToMatch, 'gi');
-            return user.username.match(regex)        
+            return (user.firstName.match(regex) || user.username.match(regex) || user.lastName.match(regex))   
+            
         })
     }  
 
@@ -80,17 +81,21 @@ function NavSearch({sessionUser}) {
             </li>
         );
     });
-    // useEffect(() => {
-    //   if (!showMenu) return;
-  
+
+    useEffect(() => {
+        if (!showMenu) return;
+        
+        window.addEventListener('click', function(e) {
+            if (!document.getElementById('search-drop').contains(e.target) && !document.getElementById('of-search').contains(e.target)) closeMenu();
+        })
   
     //   document.addEventListener('click', closeMenu);
     
-    //   return () => document.removeEventListener("click", closeMenu);
-    // }, [showMenu]);
+        return () => window.removeEventListener("click", closeMenu);
+    }, [showMenu]);
 
 //   console.log(allUsers)
-// console.log(matchedUsers)
+console.log(matchedUsers)
 
 
     return (
@@ -110,7 +115,7 @@ function NavSearch({sessionUser}) {
                     <ul className="suggestions">
                         {matchedUsersList.length > 0 ? matchedUsersList : (<li id="filter-text" style={{padding: "10px"}}>Filter for a user...</li>)}
                     </ul>
-                    <Link to="/users" onClick={closeMenu}>See all Users</Link>
+                    <Link to="/users" onClick={closeMenu} id="uilink">See all Users</Link>
                 </div>
             )}
         </>

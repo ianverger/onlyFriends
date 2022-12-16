@@ -34,6 +34,11 @@
    text-align: center;
 }
 
+#sdbb:hover {
+    background-color: #eaeaea;
+    cursor: pointer;
+}
+
 #sd-back-button {
     font-size: 20px;
     height: 45px;
@@ -117,5 +122,14 @@
 
 .suc-text > p:nth-child(2) {
     color: #918e8e;
+}
+
+#uilink {
+    padding-top: 5px;
+    color: #918e8e;
+}
+
+#uilink:hover {
+    color: #1877F2;
 }
 
