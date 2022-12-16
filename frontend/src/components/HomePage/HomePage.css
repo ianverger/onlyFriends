@@ -14,15 +14,54 @@
     gap: 15px
 }
 
-#hp-ads {
+#creator-info {
+    width: 20%;
+    padding-left: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     /* background-color: green; */
+}
+
+#creator-info > h3 {
+    color:rgb(101, 100, 100);
+    margin-bottom: 10px;
+}
+
+#creator-info > a {
+    text-decoration: none;
+}
+
+#creator-info > a > h3 {
+    color:rgb(101, 100, 100);
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+#creator-info > a > h3:hover {
+    color:rgb(66, 66, 66);
+
+}
+
+#creator-info > p {
+    color:rgb(101, 100, 100);
+    margin-bottom: 8px;
+}
+
+#hp-ads {
     width: 20%;
     padding-right: 20px;
     position: fixed;
-    top: 10rem;
+    top: 0;
     right: 0;
-    gap: 200px;
-    /* z-index: -1; */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #hp-ads > a {
@@ -32,8 +71,6 @@
 }
 
 #hp-ads > a:hover {
-    /* background-color: green;
-    height: 100%; */
     color:rgb(101, 100, 100);
 }
 
@@ -97,7 +134,7 @@
 }
 
 @media screen and (max-width: 1050px) {
-    #hp-ads {
+    #hp-ads, #creator-info {
         display: none;
     }
 }
