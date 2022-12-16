@@ -95,7 +95,7 @@ function NavSearch({sessionUser}) {
     }, [showMenu]);
 
 //   console.log(allUsers)
-console.log(matchedUsers)
+// console.log(matchedUsers)
 
 
     return (

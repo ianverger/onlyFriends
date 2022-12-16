@@ -73,9 +73,29 @@
 #of-search:hover:after {
     height: 45px;
     content: "Search OnlyFriends";
-    font-size: 20px;
+    font-size: 19px;
     padding-left: 10px;
     vertical-align: top;
     font-weight: lighter;
 }
 
+
+@media screen and (max-width: 950px) {
+    #of-search:hover:after {
+        font-size: 17px;
+        padding-top: 10px;
+        line-height: 1.4em;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    #of-search:hover {
+        width: 45px;
+        padding-left: 12px;
+        cursor: pointer;
+    }
+
+    #of-search:hover:after {
+        content: "";
+    }
+}
