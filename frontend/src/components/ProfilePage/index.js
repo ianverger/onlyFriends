@@ -18,18 +18,18 @@ function ProfilePage() {
     const dispatch = useDispatch();
     const { userId } = useParams();
     const selectedUser = useSelector(getUser(userId));
-    const friends = useSelector(getFriends(selectedUser ? selectedUser.friends : []));
     const sessionUser = useSelector(state => state.session.user);
     const [bio, setBio] = useState("");
     const allPosts = useSelector(getPosts);
-
+    
     useEffect(() => {
         dispatch(fetchUser(userId));
         dispatch(fetchFriends(userId));
-        dispatch(sessionActions.restoreSession());
+        // dispatch(sessionActions.restoreSession());
         dispatch(fetchAllPosts());
     }, [])
-
+    
+    const friends = useSelector(getFriends(selectedUser ? selectedUser.friends : []));
     if (!sessionUser) return <Redirect to="/" />
     if (!selectedUser) return null;
     
