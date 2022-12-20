@@ -11,6 +11,7 @@
     align-items: center;
     min-height: 100vh;
     /* width: 900px; */
+    margin-top: 55px;
 }
 
 #profile-header-backdrop {

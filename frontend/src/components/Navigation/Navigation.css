@@ -5,7 +5,9 @@
     align-items: center;
     background-color: white;
     height: 55px;
-    position: relative;
+    position: fixed;
+    width: 100vw;
+    top: 0;
     z-index: 5;
     box-shadow: 0 0 0 1.5px rgb(223, 222, 222);
 }

@@ -164,25 +164,55 @@ ApplicationRecord.transaction do
       current_city: "Beverly Hills, CA"
     )
 
+    # andy_profile_img = URI.open('https://onlyfriends-dev.s3.amazonaws.com/Andy_Cohen_profile.jpg')
+    # andy.profile_pic.attach(io: andy_profile_img, filename: 'Andy_Cohen_profile.jpg')
+
+    # dorit_profile_img = URI.open('https://onlyfriends-dev.s3.amazonaws.com/rhobh-season-12-headshots-dorit-kemsley.jpg')
+    # dorit.profile_pic.attach(io: dorit_profile_img, filename: 'rhobh-season-12-headshots-dorit-kemsley.jpg')
+
+    # countess_profile_img = URI.open('https://onlyfriends-dev.s3.amazonaws.com/rhony-season-13-headshot-luann-delesseps.jpg')
+    # countess.profile_pic.attach(io: countess_profile_img, filename: 'rhony-season-13-headshot-luann-delesseps.jpg')
+
+    # nene_profile_img = URI.open('https://onlyfriends-dev.s3.amazonaws.com/download.jpg')
+    # nene.profile_pic.attach(io: nene_profile_img, filename: 'download.jpg')
+
+    # camille_profile_img = URI.open('https://onlyfriends-dev.s3.amazonaws.com/800x800_camille_grammer.jpg')
+    # camille.profile_pic.attach(io: camille_profile_img, filename: '800x800_camille_grammer.jpg')
+
+    # rinna_profile_img = URI.open('https://onlyfriends-dev.s3.amazonaws.com/rhobh-season-12-headshots-lisa-rinna.jpg')
+    # rinna.profile_pic.attach(io: rinna_profile_img, filename: 'rhobh-season-12-headshots-lisa-rinna.jpg')
+
+    # karen_profile_img = URI.open('https://onlyfriends-dev.s3.amazonaws.com/rhop-season-7-headshots-karen-huger.jpg')
+    # karen.profile_pic.attach(io: karen_profile_img, filename: 'rhop-season-7-headshots-karen-huger.jpg')
+
+    # lvp_profile_img = URI.open('https://onlyfriends-dev.s3.amazonaws.com/165162737_284441036375807_2148196101909746036_n.jpg')
+    # lvp.profile_pic.attach(io: lvp_profile_img, filename: '165162737_284441036375807_2148196101909746036_n.jpg')
+
+    # kandi_profile_img = URI.open('https://onlyfriends-dev.s3.amazonaws.com/rs_1200x1200-220303130006-kandi2.jpeg')
+    # kandi.profile_pic.attach(io: kandi_profile_img, filename: 'rs_1200x1200-220303130006-kandi2.jpeg')
+
+    # brandi_profile_img = URI.open('https://onlyfriends-dev.s3.amazonaws.com/rs_1200x1200-220623122420-brandi-glanville-rhugt-season-2.webp')
+    # brandi.profile_pic.attach(io: brandi_profile_img, filename: 'rs_1200x1200-220623122420-brandi-glanville-rhugt-season-2.webp')
+
     andy_profile_img = URI.open('https://onlyfriends-dev.s3.amazonaws.com/Andy_Cohen_profile.jpg')
     andy.profile_pic.attach(io: andy_profile_img, filename: 'Andy_Cohen_profile.jpg')
 
     dorit_profile_img = URI.open('https://onlyfriends-dev.s3.amazonaws.com/rhobh-season-12-headshots-dorit-kemsley.jpg')
     dorit.profile_pic.attach(io: dorit_profile_img, filename: 'rhobh-season-12-headshots-dorit-kemsley.jpg')
 
-    countess_profile_img = URI.open('https://onlyfriends-dev.s3.amazonaws.com/rhony-season-13-headshot-luann-delesseps.jpg')
+    countess_profile_img = URI.open('https://onlyfriends-prod.s3.amazonaws.com/rhony-season-13-headshot-luann-delesseps.jpg')
     countess.profile_pic.attach(io: countess_profile_img, filename: 'rhony-season-13-headshot-luann-delesseps.jpg')
 
     nene_profile_img = URI.open('https://onlyfriends-dev.s3.amazonaws.com/download.jpg')
     nene.profile_pic.attach(io: nene_profile_img, filename: 'download.jpg')
 
-    camille_profile_img = URI.open('https://onlyfriends-dev.s3.amazonaws.com/800x800_camille_grammer.jpg')
+    camille_profile_img = URI.open('https://onlyfriends-prod.s3.amazonaws.com/1gapk0ng83mu93kcb4xaasd0j28n')
     camille.profile_pic.attach(io: camille_profile_img, filename: '800x800_camille_grammer.jpg')
 
     rinna_profile_img = URI.open('https://onlyfriends-dev.s3.amazonaws.com/rhobh-season-12-headshots-lisa-rinna.jpg')
     rinna.profile_pic.attach(io: rinna_profile_img, filename: 'rhobh-season-12-headshots-lisa-rinna.jpg')
 
-    karen_profile_img = URI.open('https://onlyfriends-dev.s3.amazonaws.com/rhop-season-7-headshots-karen-huger.jpg')
+    karen_profile_img = URI.open('https://onlyfriends-prod.s3.amazonaws.com/rhop-season-7-headshots-karen-huger.jpg')
     karen.profile_pic.attach(io: karen_profile_img, filename: 'rhop-season-7-headshots-karen-huger.jpg')
 
     lvp_profile_img = URI.open('https://onlyfriends-dev.s3.amazonaws.com/165162737_284441036375807_2148196101909746036_n.jpg')
