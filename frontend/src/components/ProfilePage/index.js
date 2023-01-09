@@ -62,7 +62,7 @@ function ProfilePage() {
 
     const profilePicSrc = selectedUser.profilePicUrl ? selectedUser.profilePicUrl : require('../../assets/blank_profile_pic.png');
     const wallPosts = allPosts.filter(post => String(post.authorId) === userId);
-    const wallPostIndexItems = wallPosts.map((post, idx) => <PostIndexItem key={idx} post={post} sessionUser={sessionUser} className="posts"/>).reverse();
+    const wallPostIndexItems = wallPosts.map((post, idx) => <PostIndexItem key={idx} post={post} pkey={idx} sessionUser={sessionUser} className="posts"/>).reverse();
     
     return (
         <div id="profile-page">
