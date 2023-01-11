@@ -97,10 +97,6 @@ function NavSearch({sessionUser}) {
         return () => window.removeEventListener("click", closeMenu);
     }, [showMenu]);
 
-//   console.log(allUsers)
-// console.log(matchedUsers)
-
-
     return (
         <>
             <button onClick={openMenu} style={{fontSize: "20px"}} id="of-search" className="nav-icon">

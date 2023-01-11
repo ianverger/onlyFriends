@@ -19,9 +19,8 @@ function ProfilePage() {
     const selectedUser = useSelector(getUser(userId));
     const sessionUser = useSelector(state => state.session.user);
     const [bio, setBio] = useState("");
-    const [isLoaded, setIsLoaded] = useState(false);
+    // const [isLoaded, setIsLoaded] = useState(false);
     const allPosts = useSelector(getPosts);
-    // console.log(isLoaded);
    
     useEffect(() => {
         dispatch(fetchUser(userId));
@@ -31,9 +30,7 @@ function ProfilePage() {
         //     dispatch(fetchFriends(userId)),
         //     dispatch(fetchAllPosts())]).then(setIsLoaded(true))
     }, [dispatch])
-    // console.log(isLoaded);
    
-    
     const friends = useSelector(getFriends(selectedUser ? selectedUser.friends : []));
     if (!sessionUser) return <Redirect to="/" />
     if (!selectedUser) return null;
@@ -51,10 +48,6 @@ function ProfilePage() {
         }
     }
 
-    console.log(selectedUser)
-    console.log(friends)
-    console.log(allPosts)
-
     const bioHandleSubmit = e => {
         e.preventDefault();
         const user = {
@@ -65,9 +58,6 @@ function ProfilePage() {
         dispatch(updateUser(user));
         bioHandleClick();
     }
-    
-    // if (!selectedUser.friends) return null;
-    // if (!friends) return null;
 
     const profilePicSrc = selectedUser.profilePicUrl ? selectedUser.profilePicUrl : require('../../assets/blank_profile_pic.png');
     const wallPosts = allPosts.filter(post => String(post.authorId) === userId);
