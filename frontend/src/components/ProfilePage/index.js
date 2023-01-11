@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, Redirect, useParams } from 'react-router-dom';
-import { getUser, getFriends, fetchUser, setUser, fetchFriends } from '../../store/users';
+import { getUser, getFriends, fetchUser, setUser, fetchFriends, getAllUsers } from '../../store/users';
 import { getPosts, fetchAllPosts } from '../../store/posts';
 import EditProfilePicModal from './EditProfilePicModal';
 import EditDetailsModal from './EditDetailsModal';
@@ -13,21 +13,26 @@ import NewPostFormModal from '../PostModal';
 import PostIndexItem from '../PostIndexItem/PostIndexItem';
 import './ProfilePage.css';
 
-
 function ProfilePage() {
     const dispatch = useDispatch();
     const { userId } = useParams();
     const selectedUser = useSelector(getUser(userId));
     const sessionUser = useSelector(state => state.session.user);
     const [bio, setBio] = useState("");
+    const [isLoaded, setIsLoaded] = useState(false);
     const allPosts = useSelector(getPosts);
-    
+    // console.log(isLoaded);
+   
     useEffect(() => {
         dispatch(fetchUser(userId));
         dispatch(fetchFriends(userId));
-        // dispatch(sessionActions.restoreSession());
         dispatch(fetchAllPosts());
-    }, [])
+        // Promise.all([dispatch(fetchUser(userId)),
+        //     dispatch(fetchFriends(userId)),
+        //     dispatch(fetchAllPosts())]).then(setIsLoaded(true))
+    }, [dispatch])
+    // console.log(isLoaded);
+   
     
     const friends = useSelector(getFriends(selectedUser ? selectedUser.friends : []));
     if (!sessionUser) return <Redirect to="/" />
@@ -46,6 +51,10 @@ function ProfilePage() {
         }
     }
 
+    console.log(selectedUser)
+    console.log(friends)
+    console.log(allPosts)
+
     const bioHandleSubmit = e => {
         e.preventDefault();
         const user = {
@@ -57,14 +66,14 @@ function ProfilePage() {
         bioHandleClick();
     }
     
-    if (!selectedUser.friends) return null;
-    if (!friends) return null;
+    // if (!selectedUser.friends) return null;
+    // if (!friends) return null;
 
     const profilePicSrc = selectedUser.profilePicUrl ? selectedUser.profilePicUrl : require('../../assets/blank_profile_pic.png');
     const wallPosts = allPosts.filter(post => String(post.authorId) === userId);
     const wallPostIndexItems = wallPosts.map((post, idx) => <PostIndexItem key={idx} post={post} pkey={idx} sessionUser={sessionUser} className="posts"/>).reverse();
     
-    return (
+    if (selectedUser && allPosts) return (
         <div id="profile-page">
             <div id="profile-header-backdrop">
             <div id="profile-header">
@@ -73,7 +82,7 @@ function ProfilePage() {
                 {(sessionUser.id !== selectedUser.id) && <div id="edit-profile-pic-placeholder"/>}
                 <div id="user-name">
                     <h1>{selectedUser && `${selectedUser.firstName} ${selectedUser.lastName}`}</h1>
-                    <p>{selectedUser && selectedUser.friends.length === 1 ? `${selectedUser.friends.length} friend` : `${selectedUser.friends.length} friends`}</p>
+                    {selectedUser && <p>{friends.length === 1 ? `${friends.length} friend` : `${friends.length} friends`}</p>}
                 </div>
                 <div id="add-friend-button-div">
                     {(sessionUser.id !== selectedUser.id) && <AddFriendButton sessionUser={sessionUser} selectedUser={selectedUser}/>}

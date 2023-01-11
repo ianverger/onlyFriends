@@ -50,6 +50,7 @@ function NavSearch({sessionUser}) {
     }
 
     const handleSubmit = (user) => {
+        // dispatch(fetchAllUsers());
         history.push(`/ProfilePage/${user.id}`);
         closeMenu();
         setInputValue("");
@@ -86,6 +87,8 @@ function NavSearch({sessionUser}) {
         if (!showMenu) return;
         
         window.addEventListener('click', function(e) {
+            if (document.getElementById('search-drop') === null) return;
+            if (document.getElementById('of-search') === null) return; 
             if (!document.getElementById('search-drop').contains(e.target) && !document.getElementById('of-search').contains(e.target)) closeMenu();
         })
   
@@ -110,7 +113,7 @@ function NavSearch({sessionUser}) {
                         <button onClick={closeMenu} id="sdbb">
                             <i className="fa-solid fa-arrow-left" id="sd-back-button"></i>
                         </button>
-                        <input type="text" id="search-bar" autoFocus="autoFocus" onChange = {displayMatches} value={inputValue} />
+                        <input type="text" id="search-bar" autoFocus="autoFocus" onChange={displayMatches} value={inputValue} />
                     </div>
                     <ul className="suggestions">
                         {matchedUsersList.length > 0 ? matchedUsersList : (<li id="filter-text" style={{padding: "10px"}}>Filter for a user...</li>)}
