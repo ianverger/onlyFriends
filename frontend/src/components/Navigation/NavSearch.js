@@ -35,7 +35,7 @@ function NavSearch({sessionUser}) {
     const findMatches = function(wordToMatch, allUsers) {
         return allUsers.filter(user => {
             const regex = new RegExp(wordToMatch, 'gi');
-            return (user.firstName.match(regex) || user.username.match(regex) || user.lastName.match(regex))   
+            return (user.firstName.match(regex) || user.username.match(regex) || user.lastName.match(regex) || `${user.firstName} ${user.lastName}`.match(regex))   
             
         })
     }  
