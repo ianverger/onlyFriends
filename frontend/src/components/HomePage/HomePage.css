@@ -30,26 +30,40 @@
 #creator-info > h3 {
     color:rgb(101, 100, 100);
     margin-bottom: 10px;
+    margin-left: 10px;
 }
 
 #creator-info > a {
     text-decoration: none;
+    display: flex;
+    height: 40px;
+    align-items: center;
+    padding-left: 10px;
+    margin-bottom: 4px;
 }
 
-#creator-info > a > h3 {
+#creator-info > a > p {
     color:rgb(101, 100, 100);
-    font-weight: 500;
-    margin-bottom: 10px;
+    /* color: black; */
+    /* font-weight: 500; */
+    padding-left: 15px;
 }
 
-#creator-info > a > h3:hover {
-    color:rgb(66, 66, 66);
+#creator-info > a > #GHP {
+    padding-left: 13px;
+}
 
+#creator-info > a:hover {
+    color:rgb(66, 66, 66);
+    background-color: rgb(229, 228, 228);
+    border-radius: 5px;
 }
 
 #creator-info > p {
+    margin-left: 10px;
+    font-size: 9.5px;
     color:rgb(101, 100, 100);
-    margin-bottom: 8px;
+    margin-bottom: 2px;
 }
 
 #hp-ads {

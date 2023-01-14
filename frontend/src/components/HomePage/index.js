@@ -51,11 +51,26 @@ function HomePage() {
                 </a>
             </div>
             <div id="creator-info">
-                <h3>Creator:</h3>
-                <a href="https://ianverger.com/" target="_blank">
-                    <h3>Ian Verger</h3>
+                <p>Created by:</p>
+                {/* <a href="https://ianverger.com/" target="_blank"> */}
+                <h3>Ian Verger</h3>
+                {/* </a> */}
+                <a href="https://ianverger.com/" target="_blank" className="home-left-links">
+                    <i class="fas fa-globe" style={{fontSize: "26px", color: "rgb(101, 100, 100)"}}></i><p>Portfolio</p>                
                 </a>
-                <p>Full-stack SWE <br></br>specializing in:</p>
+                <a href="https://docs.google.com/document/d/e/2PACX-1vRxjYzELzWQnifExRvCv6I4gu0EVdHPgL31ZjmLarfCJnkRuMW65qMG3kBJ_aVOjQiC2udH3B4Brnb8/pub" target="_blank" className="home-left-links">
+                    <i class="fa-solid fa-file" style={{fontSize: "29px", color: "rgb(101, 100, 100)", paddingLeft: "2.5px"}}></i><p>Resume</p>                
+                </a>
+                <a href="https://www.linkedin.com/in/ian-verger-02067951/" target="_blank" className="home-left-links">
+                    <i class="fa-brands fa-linkedin" style={{fontSize: "30px", color: "rgb(101, 100, 100)"}}></i><p>LinkedIn</p>
+                </a>
+                <a href="https://github.com/ianverger" target="_blank" className="home-left-links">
+                    <i class="fa-brands fa-github" style={{fontSize: "29px", color: "rgb(101, 100, 100)"}}></i><p id="GHP">GitHub</p>
+                </a>
+                <a href="https://angel.co/u/iverger" target="_blank" className="home-left-links">
+                    <i class="fa-brands fa-angellist" style={{fontSize: "30px", color: "rgb(101, 100, 100)"}}></i><p>Wellfound</p>
+                </a>
+                {/* <p>Full-stack SWE <br></br>specializing in:</p>
                 <p>JavaScript</p>
                 <p>React</p>
                 <p>Redux</p>
@@ -66,7 +81,7 @@ function HomePage() {
                 <p>CSS</p>
                 <p>SQL</p>
                 <p>Node.js</p>
-                <p>MongoDB</p>
+                <p>MongoDB</p> */}
             </div>
         </div>
 
