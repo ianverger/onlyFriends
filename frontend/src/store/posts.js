@@ -57,7 +57,7 @@ export const updatePost = (post) => async dispatch => {
         body: JSON.stringify(post)
     })
     const data = await res.json();
-    dispatch(receivePost(data.post));
+    dispatch(receivePost(data));
 }
 
 export const deletePost = (postId) => async dispatch => {

@@ -4,7 +4,7 @@ import { getUser } from '../../store/users';
 import { newPost, updatePost } from '../../store/posts'
 import './PostForm.css';
 
-function NewPostForm({post}) {
+function NewPostForm({post, setShowModal, setShowEditModal}) {
     const dispatch = useDispatch();
     const sessionUser = useSelector(state => state.session.user);
     const userId = sessionUser.id; 
@@ -13,13 +13,15 @@ function NewPostForm({post}) {
     const [edit, setEdit] = useState(post ? true : false);
 
     const handleNewSubmit = e => {
+        e.preventDefault();
         const newPostSubmit = { body, author_id: userId };
-        return dispatch(newPost(newPostSubmit));
+        return dispatch(newPost(newPostSubmit)).then(setTimeout(() => {setShowModal(false)}, 800));
     };
 
     const handleUpdate = e => {
+        e.preventDefault();
         const updatePostSubmit = { id: post.id, body };
-        return dispatch(updatePost(updatePostSubmit));
+        return dispatch(updatePost(updatePostSubmit)).then(setTimeout(() => {setShowEditModal(false)}, 800));
     }
 
     return (

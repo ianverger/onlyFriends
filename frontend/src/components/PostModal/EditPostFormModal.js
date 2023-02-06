@@ -12,7 +12,7 @@ function EditPostFormModal({post}) {
       
       {showEditModal && (
         <Modal onClose={() => setShowEditModal(false)}>
-          <NewPostForm post={post}/>
+          <NewPostForm setShowEditModal={setShowEditModal} post={post}/>
         </Modal>
       )}
     </>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { updatePost, deletePost } from "../../store/posts";
+import DeletePCModal from "../DeletePCModal/DeletePCModal";
 import EditPostFormModal from "../PostModal/EditPostFormModal";
 import './EditPost.css';
 
@@ -32,7 +33,8 @@ function EditPostDropdown({post, sessionUser, pkey}) {
             </button>
             <ul id={`${pkey}-ub`} className="update-buttons" style={{display:"none"}}> 
                 <EditPostFormModal key="0" post={post} id="edit-post"/>
-                <button key="1" onClick={handleDeletePost} id="delete-post">Delete</button>
+                <DeletePCModal key="1" post={post}/>
+                {/* <button key="1" onClick={handleDeletePost} id="delete-post">Delete</button> */}
             </ul>
           
         </div>

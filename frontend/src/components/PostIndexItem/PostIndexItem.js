@@ -100,7 +100,6 @@ const PostIndexItem = ({post, sessionUser, pkey}) => {
                     {selectedUser && <Link to={`/ProfilePage/${userId}`}><img src={selectedUser.profilePicUrl || require('../../assets/blank_profile_pic.png')} id="selected-user-profile-pic"/></Link>}
                     <div id="user-info">
                         <Link to={`/ProfilePage/${userId}`} id="link-text"><h4>{selectedUser && `${selectedUser.firstName} ${selectedUser.lastName}`}</h4></Link>
-                        {/* <p>{selectedUser && `${post.createdAt}`}</p> */}
                         <p>{getTimeElapsed(post.createdAt)}</p>
                     </div>
                 </div>

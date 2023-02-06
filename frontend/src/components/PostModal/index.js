@@ -12,7 +12,7 @@ function NewPostFormModal(props) {
       </button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          <NewPostForm />
+          <NewPostForm setShowModal={setShowModal}/>
         </Modal>
       )}
     </>
