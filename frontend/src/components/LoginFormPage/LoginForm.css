@@ -241,3 +241,79 @@ body {
         width: 235px;
     }
 }
+
+@media screen and (min-width: 1400px) { 
+    .container {
+        margin-left: 8vw;
+    }
+}
+
+@media screen and (min-height: 600px) { 
+    .container {
+        padding-bottom: 35vh;
+        min-height: 85vh;
+    }
+}
+
+@media screen and (min-height: 710px) { 
+    .container {
+        padding-bottom: 38vh;
+    }
+}
+
+@media screen and (min-height: 745px) { 
+    .container {
+        padding-bottom: 40vh;
+    }
+}
+
+@media screen and (min-height: 770px) { 
+    .container {
+        padding-bottom: 40vh;
+    }
+}
+
+@media screen and (min-height: 780px) { 
+    .container {
+        padding-bottom: 42vh;
+    }
+}
+
+@media screen and (min-height: 800px) { 
+    .container {
+        padding-bottom: 44vh;
+    }
+}
+
+@media screen and (min-height: 825px) { 
+    .container {
+        padding-bottom: 46vh;
+    }
+}
+
+@media screen and (min-height: 865px) { 
+    .container {
+        padding-bottom: 47vh;
+    }
+}
+
+@media screen and (min-height: 895px) { 
+    .container {
+        padding-bottom: 50vh;
+    }
+}
+
+@media screen and (min-height: 915px) { 
+    .container {
+        padding-bottom: 51vh;
+        min-height: 80vh;
+    }
+}
+
+@media screen and (min-height: 955px) { 
+    .container {
+        padding-bottom: 54vh;
+        min-height: 80vh;
+    }
+}
+
