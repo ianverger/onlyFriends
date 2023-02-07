@@ -19,8 +19,12 @@ OnlyFriends [(Live Link 🚀)](https://onlyfriends24.herokuapp.com/) is a facebo
 ![](https://github.com/ianverger/onlyFriends/blob/main/app/assets/images/Screen%20Shot%202023-02-07%20at%2010.19.39%20AM.png)
 New account creation, login, and guest/demo login
 
+<br><br>
+
 ![](https://github.com/ianverger/onlyFriends/blob/main/app/assets/images/browse_friends.gif)
 Peruse the site and browse friends profiles with the click of a button
+
+***
 
 ![](https://github.com/ianverger/onlyFriends/blob/main/app/assets/images/new_post.gif)
 New post creation
