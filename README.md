@@ -23,8 +23,9 @@ New account creation, login, and guest/demo login
 
 ![](https://github.com/ianverger/onlyFriends/blob/main/app/assets/images/browse_friends.gif)
 Peruse the site and browse friends profiles with the click of a button
-
-***
+<br>
+---
+<br>
 
 ![](https://github.com/ianverger/onlyFriends/blob/main/app/assets/images/new_post.gif)
 New post creation
