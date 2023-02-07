@@ -19,7 +19,7 @@ OnlyFriends [(Live Link 🚀)](https://onlyfriends24.herokuapp.com/) is a facebo
 ![](https://github.com/ianverger/onlyFriends/blob/main/app/assets/images/Screen%20Shot%202023-02-07%20at%2010.19.39%20AM.png)
 New account creation, login, and guest/demo login
 
----
+<br><br>
 
 ![](https://github.com/ianverger/onlyFriends/blob/main/app/assets/images/browse_friends.gif)
 Peruse the site and browse friends profiles with the click of a button
@@ -45,6 +45,16 @@ Full profile creation where users can update their information, upload a profile
 Search bar implemented using RegEx
 
 ## Technical Implementation Details
+
+![](https://github.com/ianverger/onlyFriends/blob/main/app/assets/images/Screen%20Shot%202023-02-07%20at%2011.45.25%20AM.png)
+I implemented friends in a way I thought was not overcomplicating the matter, using just two foreign keys representing the users and a boolean that is initially set to false when the request is sent, and then flipped to true when it is accepted.
+
+![](https://github.com/ianverger/onlyFriends/blob/main/app/assets/images/Screen%20Shot%202023-02-07%20at%2011.41.47%20AM.png)
+![](https://github.com/ianverger/onlyFriends/blob/main/app/assets/images/Screen%20Shot%202023-02-07%20at%2011.42.14%20AM.png)
+Search bar implemented using RegEx
+
+![](https://github.com/ianverger/onlyFriends/blob/main/app/assets/images/Screen%20Shot%202023-02-07%20at%2011.44.22%20AM.png)
+The feed is created by grabbing all of the existing posts, pushing them into an array, and displaying them with the most recent post on top.
 
 ## Bonus Features
 
