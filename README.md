@@ -1,8 +1,6 @@
-# OnlyFriends
+# Welcome to OnlyFriends!
 
-[Heroku Live Link](https://onlyfriends24.herokuapp.com/)
-
-OnlyFriends is a facebook clone by Ian Verger
+OnlyFriends [(Live Link 🚀)](https://onlyfriends24.herokuapp.com/) is a facebook clone with interactive features such as adding and browsing friends, writing posts, comments, and likes.
 
 ## Instructions for Use
 
@@ -15,28 +13,6 @@ OnlyFriends is a facebook clone by Ian Verger
 4. Users can peruse the site, clicking other users profiles and exploring as they please. 
 
 5. Users can friend request other users, accept and deny incoming friend requests and write to their friends via posts.
-
-## Functionality & MVPS
-
-1. New account creation, login, and guest/demo login  
-    - User creation + sign up, sign in, log out  
-    - Demo login for users to try the site
-
-2. User Profile 
-    - Logged in users can create profiles
-    - Logged in users can edit their profile info including their bio, details, and profile picture
-    - Other users can view those profiles
-
-3. Posts  
-    - Users can create, edit, and delete posts which appear on their profiles
-    - All users posts appear on the main feed on the homepage
-
-4. Friends  
-    - Users can be friends with other users
-    - Users can view a list of their friends on their profile page
-    - Users can add other users as friends from the other user's profile page
-    - Users can approve or deny incoming friend requests from the 'friends' tab on the navigation bar or from the other user's profile page
-
 
 ## Technologies, Libraries, APIs
 
@@ -59,9 +35,5 @@ npm/webpack/babel
 
 ## Bonus Features
 
-Wall posts  
-Likes  
-Comments  
-Search Bar  
-Users Index  
-Minor bug fixes + additional styling
+Delete User
+Unfriend
