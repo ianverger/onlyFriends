@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { ModalProvider } from "./context/Modal";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import './index.css';
 import App from './App';
 import configureStore from './store';
@@ -21,11 +23,22 @@ if (process.env.NODE_ENV !== 'production') {
   window.userActions = userActions;
 }
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
 function Root() {
   return (
     <ModalProvider>
       <Provider store={store}>
         <BrowserRouter>
+          <ScrollToTop/>
           <App />
         </BrowserRouter>
       </Provider>
