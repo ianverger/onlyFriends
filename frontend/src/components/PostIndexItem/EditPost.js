@@ -20,23 +20,21 @@ function EditPostDropdown({post, sessionUser, pkey}) {
         }
     }
 
-    const handleDeletePost = e => {
-        e.preventDefault();
-        const postId = post.id;
-        return dispatch(deletePost(postId));
-    }
+    // const handleDeletePost = e => {
+    //     e.preventDefault();
+    //     const postId = post.id;
+    //     return dispatch(deletePost(postId));
+    // }
 
     return (
         <div>
-            <button onClick={() => handleClick()} className="ellipses" id={`${pkey}-ellipses`}>
+            <button className="ellipses" id={`${pkey}-ellipses`}>
                 <i className="fa-solid fa-ellipsis"></i>
+                <ul id={`${pkey}-ub`} className="update-buttons"> 
+                    <EditPostFormModal key="0" post={post} id="edit-post"/>
+                    <DeletePCModal key="1" post={post}/>
+                </ul>
             </button>
-            <ul id={`${pkey}-ub`} className="update-buttons" style={{display:"none"}}> 
-                <EditPostFormModal key="0" post={post} id="edit-post"/>
-                <DeletePCModal key="1" post={post}/>
-                {/* <button key="1" onClick={handleDeletePost} id="delete-post">Delete</button> */}
-            </ul>
-          
         </div>
     )
 }

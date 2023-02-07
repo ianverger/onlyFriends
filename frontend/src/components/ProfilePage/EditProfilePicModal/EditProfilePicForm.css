@@ -64,3 +64,18 @@ hr {
     cursor: pointer;
 }
 
+#pic-errors {
+    display: none;
+}
+
+#pic-errors-active {
+    display: block;
+    color: red;
+    margin-top: -10px;
+    text-align: center;
+}
+
+#disclaimer {
+    font-size: smaller;
+    text-align: center;
+}

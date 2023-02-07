@@ -11,7 +11,7 @@ function DeletePCModal({post}) {
   const handleDeletePost = e => {
     e.preventDefault();
     const postId = post.id;
-    return dispatch(deletePost(postId));
+    return dispatch(deletePost(postId)).then(setShowDeleteModal(false));
   }
 
   return (

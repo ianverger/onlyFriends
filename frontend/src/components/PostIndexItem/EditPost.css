@@ -14,7 +14,21 @@
     color:black;
 }
 
-#delete-post:hover, .ellipses:hover {
+#delete-post:hover {
     background-color: #eaeaea;
     cursor: pointer;
 }
+
+.ellipses:hover i {
+    display: none;
+    background-color: inherit;
+}
+
+.ellipses ul {
+    display: none;
+}
+
+.ellipses:hover ul {
+    display: block;
+}
+
