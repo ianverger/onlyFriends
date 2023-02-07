@@ -24,17 +24,22 @@ New account creation, login, and guest/demo login
 ![](https://github.com/ianverger/onlyFriends/blob/main/app/assets/images/browse_friends.gif)
 Peruse the site and browse friends profiles with the click of a button
 
----
-
+<br><br>
 
 ![](https://github.com/ianverger/onlyFriends/blob/main/app/assets/images/new_post.gif)
 New post creation
 
+<br><br>
+
 ![](https://github.com/ianverger/onlyFriends/blob/main/app/assets/images/add_friend.gif)
 Accept and deny incoming friend requests, send out new friend requests and more 
 
+<br><br>
+
 ![](https://github.com/ianverger/onlyFriends/blob/main/app/assets/images/profile_pic.gif)
 Full profile creation where users can update their information, upload a profile picture, see their friends, etc.
+
+<br><br>
 
 ![](https://github.com/ianverger/onlyFriends/blob/main/app/assets/images/search_bar.gif)
 Search bar implemented using RegEx
