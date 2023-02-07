@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, Redirect, useParams } from 'react-router-dom';
-import { getUser, getFriends, fetchUser, setUser, fetchFriends, getAllUsers } from '../../store/users';
+import { getUser, getFriends, fetchUser, setUser, fetchFriends, getAllUsers, fetchAllUsers } from '../../store/users';
 import { getPosts, fetchAllPosts } from '../../store/posts';
 import EditProfilePicModal from './EditProfilePicModal';
 import EditDetailsModal from './EditDetailsModal';
@@ -19,22 +19,19 @@ function ProfilePage() {
     const selectedUser = useSelector(getUser(userId));
     const sessionUser = useSelector(state => state.session.user);
     const [bio, setBio] = useState("");
-    // const [isLoaded, setIsLoaded] = useState(false);
     const allPosts = useSelector(getPosts);
-   
+
     useEffect(() => {
         dispatch(fetchUser(userId));
         dispatch(fetchFriends(userId));
         dispatch(fetchAllPosts());
-        // Promise.all([dispatch(fetchUser(userId)),
-        //     dispatch(fetchFriends(userId)),
-        //     dispatch(fetchAllPosts())]).then(setIsLoaded(true))
     }, [dispatch])
    
     const friends = useSelector(getFriends(selectedUser ? selectedUser.friends : []));
+    
     if (!sessionUser) return <Redirect to="/" />
-    // if (!selectedUser) return null;
-    if (!selectedUser) return <Redirect to="/*" />;
+    if (!selectedUser) return null;
+    // if (userIds.includes(userId)) return <Redirect to="/*"/>
     
     const bioHandleClick = e => {
         setBio(selectedUser.bio)
@@ -59,11 +56,12 @@ function ProfilePage() {
         dispatch(updateUser(user));
         bioHandleClick();
     }
+console.log(userId)
 
     const profilePicSrc = selectedUser.profilePicUrl ? selectedUser.profilePicUrl : require('../../assets/blank_profile_pic.png');
     const wallPosts = allPosts.filter(post => String(post.authorId) === userId);
     const wallPostIndexItems = wallPosts.map((post, idx) => <PostIndexItem key={idx} post={post} pkey={idx} sessionUser={sessionUser} className="posts"/>).reverse();
-    
+
     if (selectedUser && allPosts) return (
         <div id="profile-page">
             <div id="profile-header-backdrop">
@@ -139,9 +137,6 @@ function ProfilePage() {
            
 
         </div>
-
-         
-    
         
     )
 }

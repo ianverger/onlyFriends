@@ -21,10 +21,6 @@ const RequestCard = ({userId, request}) => {
         return dispatch(denyFriendRequest(friendRequest));
     }
 
-    // useEffect(() => {
-    //     dispatch(fetchUser(userId));
-    // }, [dispatch, handleApprove, handleDeny])
-
     useEffect(() => {
         dispatch(sessionActions.restoreSession());
     }, [handleApprove, handleDeny])
