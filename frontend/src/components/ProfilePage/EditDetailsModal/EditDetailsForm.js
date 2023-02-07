@@ -6,7 +6,7 @@ import { Link, Redirect, useParams } from 'react-router-dom';
 // import * as sessionActions from "../../../store/session";
 import './EditDetailsForm.css';
 
-function EditDetailsForm() {
+function EditDetailsForm({setShowModal}) {
     const dispatch = useDispatch();
     const { userId } = useParams();
     const selectedUser = useSelector(getUser(userId));
@@ -18,12 +18,13 @@ function EditDetailsForm() {
     const [work, setWork] = useState(selectedUser.work);
 
     const handleSubmit = e => {
+        e.preventDefault();
         const user = {
             ...selectedUser,
             relationship, hometown, currentCity, education, work
         }
         user.id = userId;
-        dispatch(updateUser(user));
+        dispatch(updateUser(user)).then(setShowModal(false));
     }
 
     return (

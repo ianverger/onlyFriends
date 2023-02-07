@@ -14,3 +14,8 @@ h1 {
     height: 38px;
     margin-left: 25%;
 }
+
+#submit-button:hover {
+    background-color: #166FE5;
+    cursor: pointer;
+}

@@ -11,7 +11,7 @@ function EditDetailsModal() {
       
         {showModal && (
             <Modal onClose={() => setShowModal(false)}>
-                <EditDetailsForm />
+                <EditDetailsForm setShowModal={setShowModal}/>
             </Modal>
         )}
       </>
