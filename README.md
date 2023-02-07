@@ -2,6 +2,8 @@
 
 OnlyFriends [(Live Link 🚀)](https://onlyfriends24.herokuapp.com/) is a facebook clone with interactive features such as adding and browsing friends, writing posts, comments, and likes.
 
+<br>
+
 ## Tech
 
 - React with Redux: handling data on the front end and rendering interactive components
