@@ -4,13 +4,13 @@ OnlyFriends [(Live Link 🚀)](https://onlyfriends24.herokuapp.com/) is a facebo
 
 ## Tech
 
-React with Redux: handling data on the front end and rendering interactive components
-Javascript: manipulate the react/html components
-Ruby on Rails (as an API): backend for serving data
-PostgreSQL: database
-AWS S3: cloud storage for profile pictures
-CSS: pixel-perfect site styling
-Heroku: hosting
+- React with Redux: handling data on the front end and rendering interactive components
+- Javascript: manipulate the react/html components
+- Ruby on Rails (as an API): backend for serving data
+- PostgreSQL: database
+- AWS S3: cloud storage for profile pictures
+- CSS: pixel-perfect site styling
+- Heroku: hosting
 
 ## Instructions for Use
 
