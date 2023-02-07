@@ -33,7 +33,8 @@ function ProfilePage() {
    
     const friends = useSelector(getFriends(selectedUser ? selectedUser.friends : []));
     if (!sessionUser) return <Redirect to="/" />
-    if (!selectedUser) return null;
+    // if (!selectedUser) return null;
+    if (!selectedUser) return <Redirect to="/*" />;
     
     const bioHandleClick = e => {
         setBio(selectedUser.bio)
