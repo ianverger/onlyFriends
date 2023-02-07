@@ -46,7 +46,7 @@ Search bar implemented using RegEx
 
 ## Technical Implementation Details
 
-![](https://github.com/ianverger/onlyFriends/blob/main/app/assets/images/Screen%20Shot%202023-02-07%20at%2011.45.25%20AM.png)
+![](https://github.com/ianverger/onlyFriends/blob/main/app/assets/images/Screen%20Shot%202023-02-07%20at%2011.45.25%20AM.png)<br>
 I implemented friends in a way I thought was not overcomplicating the matter, using just two foreign keys representing the users and a boolean that is initially set to false when the request is sent, and then flipped to true when it is accepted.
 
 ![](https://github.com/ianverger/onlyFriends/blob/main/app/assets/images/Screen%20Shot%202023-02-07%20at%2011.41.47%20AM.png)
