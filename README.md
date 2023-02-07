@@ -14,21 +14,37 @@ OnlyFriends [(Live Link 🚀)](https://onlyfriends24.herokuapp.com/) is a facebo
 - CSS: pixel-perfect site styling
 - Heroku: hosting
 
-## Instructions for Use
+## Core Features
 
-1. Upon entering, the user is directed to the login page, where they can either login if they have an existing account, or sign up for a new one. A demo user option is also available.
+![](https://github.com/ianverger/onlyFriends/blob/main/app/assets/images/Screen%20Shot%202023-02-07%20at%2010.19.39%20AM.png)
+New account creation, login, and guest/demo login
 
-2. Users are then redirected to the home page where they can browse posts from other users. Users can also create, edit, or delete posts of their own.
+---
 
-3. Users can access their profile page where they can update their information, upload a Profile picture, see their friends, make a post, etc.
+![](https://github.com/ianverger/onlyFriends/blob/main/app/assets/images/browse_friends.gif)
+Peruse the site and browse friends profiles with the click of a button
 
-4. Users can peruse the site, clicking other users profiles and exploring as they please. 
+<br><br>
 
-5. Users can friend request other users, accept and deny incoming friend requests and write to their friends via posts.
+![](https://github.com/ianverger/onlyFriends/blob/main/app/assets/images/new_post.gif)
+New post creation
+
+<br><br>
+
+![](https://github.com/ianverger/onlyFriends/blob/main/app/assets/images/add_friend.gif)
+Accept and deny incoming friend requests, send out new friend requests and more 
+
+<br><br>
+
+![](https://github.com/ianverger/onlyFriends/blob/main/app/assets/images/profile_pic.gif)
+Full profile creation where users can update their information, upload a profile picture, see their friends, etc.
+
+<br><br>
+
+![](https://github.com/ianverger/onlyFriends/blob/main/app/assets/images/search_bar.gif)
+Search bar implemented using RegEx
 
 ## Technical Implementation Details
-
-...coming
 
 ## Bonus Features
 
