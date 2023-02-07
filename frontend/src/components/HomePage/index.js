@@ -12,7 +12,6 @@ function HomePage() {
     const dispatch = useDispatch();
     const sessionUser = useSelector(state => state.session.user);
     const userId = sessionUser ? sessionUser.id : null;
-    // const selectedUser = useSelector(getUser(userId));
     const allPosts = useSelector(getPosts);
     
     useEffect(() => {
@@ -23,7 +22,6 @@ function HomePage() {
     
     if (!sessionUser) return <Redirect to="/" />
     if (allPosts.length === 0) return null;
-    // if (!selectedUser) return null;
     
     const profilePicSrc = sessionUser.profilePicUrl ? sessionUser.profilePicUrl : require('../../assets/blank_profile_pic.png');
     const postIndexItems = allPosts.map((post, idx) => <PostIndexItem key={idx} post={post} sessionUser={sessionUser} pkey={idx} className="posts"/>).reverse();
@@ -70,18 +68,6 @@ function HomePage() {
                 <a href="https://angel.co/u/iverger" target="_blank" className="home-left-links">
                     <i class="fa-brands fa-angellist" style={{fontSize: "30px", color: "rgb(101, 100, 100)"}}></i><p>Wellfound</p>
                 </a>
-                {/* <p>Full-stack SWE <br></br>specializing in:</p>
-                <p>JavaScript</p>
-                <p>React</p>
-                <p>Redux</p>
-                <p>Express</p>
-                <p>Ruby</p>
-                <p>Rails</p>
-                <p>HTML</p>
-                <p>CSS</p>
-                <p>SQL</p>
-                <p>Node.js</p>
-                <p>MongoDB</p> */}
             </div>
         </div>
 

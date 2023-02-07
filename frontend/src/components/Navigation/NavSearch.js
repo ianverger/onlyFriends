@@ -30,13 +30,10 @@ function NavSearch({sessionUser}) {
         dispatch(fetchAllUsers());
     }, []);
 
-    // const [users, setUsers] = useState(allUsers);
-
     const findMatches = function(wordToMatch, allUsers) {
         return allUsers.filter(user => {
             const regex = new RegExp(wordToMatch, 'gi');
-            return (user.firstName.match(regex) || user.username.match(regex) || user.lastName.match(regex) || `${user.firstName} ${user.lastName}`.match(regex))   
-            
+            return (user.firstName.match(regex) || user.username.match(regex) || user.lastName.match(regex) || `${user.firstName} ${user.lastName}`.match(regex))    
         })
     }  
 
@@ -50,7 +47,6 @@ function NavSearch({sessionUser}) {
     }
 
     const handleSubmit = (user) => {
-        // dispatch(fetchAllUsers());
         history.push(`/ProfilePage/${user.id}`);
         closeMenu();
         setInputValue("");
@@ -91,8 +87,6 @@ function NavSearch({sessionUser}) {
             if (document.getElementById('of-search') === null) return; 
             if (!document.getElementById('search-drop').contains(e.target) && !document.getElementById('of-search').contains(e.target)) closeMenu();
         })
-  
-    //   document.addEventListener('click', closeMenu);
     
         return () => window.removeEventListener("click", closeMenu);
     }, [showMenu]);

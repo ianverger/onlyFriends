@@ -56,7 +56,6 @@ function ProfilePage() {
         dispatch(updateUser(user));
         bioHandleClick();
     }
-console.log(userId)
 
     const profilePicSrc = selectedUser.profilePicUrl ? selectedUser.profilePicUrl : require('../../assets/blank_profile_pic.png');
     const wallPosts = allPosts.filter(post => String(post.authorId) === userId);
