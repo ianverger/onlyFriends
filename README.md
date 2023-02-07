@@ -28,7 +28,7 @@ OnlyFriends [(Live Link 🚀)](https://onlyfriends24.herokuapp.com/) is a facebo
 
 ## Technical Implementation Details
 
-...coming
+![](https://github.com/ianverger/onlyFriends/blob/main/app/assets/images/Screen%20Shot%202023-02-07%20at%2010.19.39%20AM.png)
 
 ## Bonus Features
 
