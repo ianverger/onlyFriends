@@ -63,5 +63,5 @@ The feed is created by grabbing all of the existing posts, pushing them into an 
 
 ## Bonus Features
 
-Delete User
-Unfriend
+-Delete User
+-Unfriend
