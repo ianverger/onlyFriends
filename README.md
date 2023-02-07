@@ -41,8 +41,13 @@ Full profile creation where users can update their information, upload a profile
 
 <br><br>
 
-![](https://github.com/ianverger/onlyFriends/blob/main/app/assets/images/search_bar.gif)
+![](https://github.com/ianverger/onlyFriends/blob/main/app/assets/images/search_bar.gif)<br>
 Search bar implemented using RegEx
+
+<br><br>
+
+![](https://github.com/ianverger/onlyFriends/blob/main/app/assets/images/responsive_css_2.gif)
+Entire site is responsive and works on any size screen, including mobile
 
 ## Technical Implementation Details
 
